@@ -18,11 +18,16 @@ import {
 import { COMPARISON_CATEGORIES } from "@/lib/constants";
 
 export default function BeforeAfterSlider() {
+  const [isMounted, setIsMounted] = useState(false);
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [zoomMode, setZoomMode] = useState(false);
   const [zoomCoords, setZoomCoords] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const currentCategory = COMPARISON_CATEGORIES[activeCategoryIndex];

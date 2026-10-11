@@ -6,7 +6,8 @@ services:
     container_name: picasa_3d_portal
     restart: unless-stopped
     ports:
-      - "3095:3095"
+      - "3095:3000"
     environment:
       - NODE_ENV=production
-      - PORT=3095
+      - PORT=3000
+      - HOSTNAME=0.0.0.0

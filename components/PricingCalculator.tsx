@@ -345,11 +345,15 @@ export default function PricingCalculator({
               </button>
 
               <button
-                onClick={() => window.print()}
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.print();
+                  }
+                }}
                 className="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white text-xs font-bold font-mono flex items-center justify-center gap-2 transition-colors"
               >
                 <Printer className="w-3.5 h-3.5" />
-                <span>Print / Export Quote (PDF)</span>
+                <span>Export Formal Proposal PDF</span>
               </button>
             </div>
 

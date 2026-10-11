@@ -1,5 +1,24 @@
 import type { Metadata, Viewport } from "next";
+import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Picasa Limited | 2026 3D Edition • Precision Post-Production at Enterprise Scale",
@@ -38,16 +57,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-[#070A11] text-[#F8FAFC] antialiased selection:bg-cyan-500 selection:text-black">
+    <html 
+      lang="en" 
+      className={`dark scroll-smooth ${plusJakartaSans.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="font-sans bg-[#070A11] text-[#F8FAFC] antialiased selection:bg-cyan-500 selection:text-black">
         {children}
       </body>
     </html>

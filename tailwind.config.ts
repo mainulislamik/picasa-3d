@@ -20,21 +20,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "sans-serif",
-        ],
-        mono: [
-          "JetBrains Mono",
-          "Fira Code",
-          "ui-monospace",
-          "SFMono-Regular",
-          "monospace",
-        ],
+        sans: ["var(--font-plus-jakarta)", "sans-serif"],
+        display: ["var(--font-outfit)", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       boxShadow: {
         "3d-glow": "0 0 50px -10px rgba(6, 182, 212, 0.25)",
@@ -50,7 +38,7 @@ const config: Config = {
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-12px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
         floatReverse: {
           "0%, 100%": { transform: "translateY(0px)" },

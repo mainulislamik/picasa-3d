@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   X, 
   UploadCloud, 
@@ -31,7 +31,14 @@ interface MockFile {
   status: "uploading" | "completed";
 }
 
+interface QuoteApiResponse {
+  quoteId: string;
+  assignedDesk: string;
+  targetDelivery: string;
+}
+
 export default function UploadModal({ isOpen, onClose, initialConfig }: UploadModalProps) {
+  const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"direct" | "cloud">("direct");
   const [files, setFiles] = useState<MockFile[]>([
     { name: "LOOKBOOK_SS26_01.CR3", size: "38.4 MB", progress: 100, status: "completed" },
@@ -44,9 +51,27 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
   const [clientEmail, setClientEmail] = useState("");
   const [clientCompany, setClientCompany] = useState("");
   const [instructions, setInstructions] = useState("");
+  
+  // Network & Submission States
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [quoteResponse, setQuoteResponse] = useState<QuoteApiResponse | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (initialConfig?.serviceId) {
+      setSelectedServices([initialConfig.serviceId]);
+    }
+    if (initialConfig?.turnaround) {
+      setTurnaround(initialConfig.turnaround);
+    }
+  }, [initialConfig]);
+
+  if (!isMounted || !isOpen) return null;
 
   const handleSimulateAddFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -71,9 +96,48 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          clientEmail,
+          clientCompany,
+          selectedServices,
+          turnaround,
+          activeTab,
+          cloudUrl,
+          cloudPassword,
+          instructions,
+          files,
+          volume: files.length || 5,
+          estimatedPrice: "$0.00 (Free Pilot Batch)",
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to process quote submission.");
+      }
+
+      setQuoteResponse({
+        quoteId: data.quoteId,
+        assignedDesk: data.assignedDesk,
+        targetDelivery: data.targetDelivery,
+      });
+      setSubmitted(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || "An unexpected error occurred. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,47 +154,63 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
         <button
           onClick={onClose}
           className="absolute top-6 right-6 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors border border-white/10"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {submitted ? (
           /* Success Screen */
-          <div className="py-12 text-center space-y-6">
+          <div className="py-12 text-center space-y-6 animate-in zoom-in-95 duration-200">
             <div className="w-20 h-20 rounded-full bg-cyan-950/80 border-2 border-cyan-400 flex items-center justify-center mx-auto shadow-3d-glow">
               <CheckCircle2 className="w-10 h-10 text-cyan-400" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-display">
                 5 Free Test Batch Ingested!
               </h3>
               <p className="text-sm text-slate-300 max-w-md mx-auto">
-                Your high-resolution files have entered the Dhaka Studio queue under ticket <span className="text-cyan-400 font-mono font-bold">#PIC-84920</span>.
+                Your high-resolution files have entered the Dhaka Studio queue under ticket:{" "}
+                <span className="text-cyan-400 font-mono font-bold tracking-wider">
+                  #{quoteResponse?.quoteId || "PIC-2026-84920"}
+                </span>
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-slate-900/90 border border-white/10 max-w-md mx-auto text-left text-xs space-y-2">
               <div className="flex justify-between">
-                <span className="text-slate-400">Assigned Senior Lead:</span>
-                <span className="text-white font-mono font-bold">QC Desk #07 (Dhaka HQ)</span>
+                <span className="text-slate-400">Assigned Production Desk:</span>
+                <span className="text-white font-mono font-bold">
+                  {quoteResponse?.assignedDesk || "QC Desk #07 (Dhaka HQ)"}
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Target Delivery:</span>
-                <span className="text-emerald-400 font-mono font-bold">Within 12 Hours</span>
+                <span className="text-emerald-400 font-mono font-bold">
+                  {quoteResponse?.targetDelivery || "Within 12 Hours"}
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Notification Sent To:</span>
                 <span className="text-cyan-300 font-mono font-bold">{clientEmail || "your email"}</span>
+              </div>
+              <div className="flex justify-between pt-2 border-t border-white/5">
+                <span className="text-slate-400">Status:</span>
+                <span className="text-cyan-400 font-mono font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                  QUEUED FOR RETOUCH
+                </span>
               </div>
             </div>
 
             <button
               onClick={() => {
                 setSubmitted(false);
+                setQuoteResponse(null);
                 onClose();
               }}
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 font-bold text-sm shadow-3d-glow"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 font-bold text-sm shadow-3d-glow hover:scale-105 transition-all"
             >
               Close & Return to Studio
             </button>
@@ -144,7 +224,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 <Sparkles className="w-3 h-3 text-cyan-400" />
                 <span>PILOT TEST • 100% FREE NO CREDIT CARD REQUIRED</span>
               </div>
-              <h3 className="text-2xl font-black tracking-tight text-white">
+              <h3 className="text-2xl font-black tracking-tight text-white font-display">
                 Submit Your Images (5 Images Free)
               </h3>
               <p className="text-xs text-slate-300">
@@ -192,59 +272,73 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                       multiple
                       onChange={handleSimulateAddFile}
                       className="hidden"
+                      accept=".jpg,.jpeg,.png,.tiff,.tif,.psd,.cr2,.cr3,.nef,.arw,.dng"
                     />
-                    <UploadCloud className="w-10 h-10 text-cyan-400 mb-2 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm font-bold text-white">
-                      Click to Browse or Drag High-Res Assets
+                    <div className="w-12 h-12 rounded-full bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                      <UploadCloud className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <span className="text-sm font-bold text-white mb-1">
+                      Drop files here or click to browse
                     </span>
-                    <span className="text-[11px] text-slate-400 font-mono mt-1">
-                      Supports CR3, NEF, ARW, TIFF, PSD, PNG, JPG (Up to 5GB per batch)
+                    <span className="text-[11px] text-slate-400 text-center max-w-sm">
+                      Supports CR3, NEF, ARW, PSD, TIFF, PNG, JPG (Up to 2GB per file)
                     </span>
                   </label>
 
-                  {/* Upload Progress Queue */}
-                  <div className="space-y-2">
-                    {files.map((file, idx) => (
-                      <div
-                        key={idx}
-                        className="p-3 rounded-xl bg-slate-900/90 border border-white/10 flex items-center justify-between text-xs"
-                      >
-                        <div className="flex items-center gap-3">
-                          <FileCheck2 className="w-4 h-4 text-cyan-400" />
-                          <div>
-                            <span className="font-mono font-bold text-white block">{file.name}</span>
-                            <span className="text-[10px] text-slate-400 font-mono">{file.size}</span>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                          <div className="w-24 bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                            <div
-                              className="bg-cyan-400 h-full rounded-full transition-all"
-                              style={{ width: `${file.progress}%` }}
-                            ></div>
-                          </div>
-                          <span className="font-mono text-[11px] text-cyan-300 w-8">{file.progress}%</span>
-                          <button
-                            type="button"
-                            onClick={() => handleRemoveFile(idx)}
-                            className="p-1 hover:text-red-400 text-slate-400 transition-colors"
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
+                  {/* Uploaded File Queue */}
+                  {files.length > 0 && (
+                    <div className="space-y-2">
+                      <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                        <span>Queued Images ({files.length})</span>
+                        <span className="text-cyan-400">Ready for Retouching</span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
+                        {files.map((file, idx) => (
+                          <div
+                            key={idx}
+                            className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 flex items-center justify-between text-xs"
+                          >
+                            <div className="flex items-center gap-3 truncate">
+                              <FileText className="w-4 h-4 text-cyan-400 shrink-0" />
+                              <div className="truncate">
+                                <p className="font-mono font-bold text-slate-200 truncate">{file.name}</p>
+                                <p className="text-[10px] text-slate-500">{file.size}</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              {file.status === "completed" ? (
+                                <span className="flex items-center gap-1 text-[11px] text-emerald-400 font-mono">
+                                  <CheckCircle2 className="w-3.5 h-3.5" />
+                                  <span>Loaded</span>
+                                </span>
+                              ) : (
+                                <span className="text-[11px] text-cyan-400 font-mono">
+                                  {file.progress}%
+                                </span>
+                              )}
+                              <button
+                                type="button"
+                                onClick={() => handleRemoveFile(idx)}
+                                className="text-slate-500 hover:text-red-400 transition-colors p-1"
+                                aria-label="Remove file"
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
-              {/* TAB 2: Cloud Storage Link Submission */}
+              {/* TAB 2: Cloud Ingestion Form */}
               {activeTab === "cloud" && (
                 <div className="space-y-4">
                   <div>
                     <label className="text-xs font-mono font-bold text-slate-300 block mb-1">
-                      Cloud Share Link (Google Drive, WeTransfer, Dropbox, OneDrive)
+                      Cloud Storage Share Link *
                     </label>
                     <input
                       type="url"
@@ -345,6 +439,14 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 ></textarea>
               </div>
 
+              {/* Error Message Box */}
+              {errorMessage && (
+                <div className="p-3 rounded-xl bg-red-950/80 border border-red-500/50 text-red-200 text-xs flex items-center gap-2 animate-in fade-in">
+                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               {/* Security & Submit CTA */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
                 <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400">
@@ -354,10 +456,20 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:from-cyan-400 hover:to-violet-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-3d-glow"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:from-cyan-400 hover:to-violet-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-3d-glow disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                  <span>Submit 5 Free Test Images</span>
-                  <ArrowRight className="w-4 h-4" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <span>Transmitting to Studio Queue...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit 5 Free Test Images</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
 

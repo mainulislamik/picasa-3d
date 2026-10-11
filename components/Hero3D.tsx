@@ -28,9 +28,14 @@ interface Hero3DProps {
 }
 
 export default function Hero3D({ onOpenUpload }: Hero3DProps) {
+  const [isMounted, setIsMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [exploded, setExploded] = useState(true);
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Mouse coordinate motion values for spring-physics 3D tilt
   const mouseX = useMotionValue(0);

@@ -20,10 +20,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onOpenUpload }: NavbarProps) {
+  const [isMounted, setIsMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -34,7 +36,7 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isMounted && isScrolled
           ? "bg-[#070A11]/85 backdrop-blur-xl border-b border-white/10 shadow-glass-sm py-3"
           : "bg-transparent border-b border-white/5 py-4"
       }`}
