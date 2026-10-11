@@ -10,13 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#070A11",
-        card: "rgba(15, 23, 42, 0.65)",
-        surface: "#0B1120",
+        background: "#F8FAFC",
+        card: "#FFFFFF",
+        surface: "#F1F5F9",
         accent: {
-          cyan: "#06B6D4",
-          violet: "#8B5CF6",
-          emerald: "#10B981",
+          cyan: "#0284C7",
+          violet: "#7C3AED",
+          emerald: "#059669",
         },
       },
       fontFamily: {
@@ -25,10 +25,11 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       boxShadow: {
-        "3d-glow": "0 0 50px -10px rgba(6, 182, 212, 0.25)",
-        "violet-glow": "0 0 50px -10px rgba(139, 92, 246, 0.25)",
-        "glass-sm": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
-        "glass-lg": "0 20px 50px rgba(0, 0, 0, 0.6)",
+        "3d-glow": "0 10px 40px -10px rgba(2, 132, 199, 0.25)",
+        "violet-glow": "0 10px 40px -10px rgba(124, 58, 237, 0.22)",
+        "glass-sm": "0 4px 20px 0 rgba(15, 23, 42, 0.05)",
+        "glass-lg": "0 20px 40px -15px rgba(15, 23, 42, 0.08)",
+        "card-hover": "0 20px 40px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(2, 132, 199, 0.2)",
       },
       animation: {
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",

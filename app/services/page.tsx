@@ -131,25 +131,25 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070A11] text-white flex flex-col selection:bg-cyan-500 selection:text-black">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-cyan-500 selection:text-white">
       <Navbar onOpenUpload={() => handleOpenUpload()} />
 
       <main className="flex-1 pt-28 pb-20">
         {/* Page Hero Header */}
         <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/70 border border-cyan-800/80 text-cyan-300 text-xs font-mono mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
             <span>ENTERPRISE SERVICE CATALOG • 2026</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-display mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 font-display mb-6">
             Precision Post-Production <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
               Engineered for Global Brands
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             From microscopic jewelry frequency separation to 25,000-image daily e-commerce catalog turnaround,
             Picasa delivers hand-crafted perfection with Dhaka HQ speed and enterprise SLA guarantees.
           </p>
@@ -157,14 +157,14 @@ export default function ServicesPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => handleOpenUpload()}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:from-cyan-400 hover:to-violet-500 text-white font-bold text-sm shadow-3d-glow flex items-center gap-2 transition-all"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-sm shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               <span>Test 5 Images Free</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 ml-2 inline" />
             </button>
             <Link
               href="/pricing"
-              className="px-8 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm transition-all"
+              className="px-8 py-3.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-sm shadow-sm hover:scale-105 transition-all"
             >
               Explore Pricing & SLA
             </Link>
@@ -180,10 +180,10 @@ export default function ServicesPage() {
         {/* Deep Dive Detailed Sections */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 space-y-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold font-display text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900">
               Technical Specifications & In-Depth Capabilities
             </h2>
-            <p className="text-sm text-slate-400 mt-2">
+            <p className="text-sm text-slate-600 mt-2">
               Every service includes rigorous three-tier QC before client delivery.
             </p>
           </div>
@@ -195,63 +195,63 @@ export default function ServicesPage() {
                 <div
                   key={spec.id}
                   id={spec.id}
-                  className="rounded-3xl p-8 bg-slate-900/60 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between"
+                  className="rounded-3xl p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-400 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${spec.color} p-[1px]`}>
-                          <div className="w-full h-full bg-[#070A11] rounded-[15px] flex items-center justify-center">
-                            <IconComp className="w-6 h-6 text-white" />
+                          <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
+                            <IconComp className="w-6 h-6 text-slate-900" />
                           </div>
                         </div>
                         <div>
-                          <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-bold block">
+                          <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-700 font-bold block">
                             {spec.category}
                           </span>
-                          <h3 className="text-xl font-bold text-white font-display">
+                          <h3 className="text-xl font-bold text-slate-900 font-display">
                             {spec.title}
                           </h3>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-sm font-semibold text-cyan-200/90 mb-3">
+                    <p className="text-sm font-semibold text-slate-800 mb-3">
                       {spec.leadText}
                     </p>
 
-                    <p className="text-xs text-slate-300 leading-relaxed mb-6">
+                    <p className="text-xs text-slate-600 leading-relaxed mb-6">
                       {spec.body}
                     </p>
 
-                    <div className="space-y-2 mb-6 border-t border-white/5 pt-4">
-                      <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">
+                    <div className="space-y-2 mb-6 border-t border-slate-100 pt-4">
+                      <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-wider block mb-2">
                         Key Deliverables:
                       </span>
                       {spec.deliverables.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                    <div className="flex gap-4 text-[11px] font-mono text-slate-400">
+                  <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+                    <div className="flex gap-4 text-[11px] font-mono text-slate-500">
                       <div>
-                        <span className="text-slate-500 block text-[10px]">TOLERANCE</span>
-                        <span className="text-white font-bold">{spec.stats.accuracy}</span>
+                        <span className="text-slate-400 block text-[10px]">TOLERANCE</span>
+                        <span className="text-slate-900 font-bold">{spec.stats.accuracy}</span>
                       </div>
                       <div>
-                        <span className="text-slate-500 block text-[10px]">CAPACITY</span>
-                        <span className="text-white font-bold">{spec.stats.capacity}</span>
+                        <span className="text-slate-400 block text-[10px]">CAPACITY</span>
+                        <span className="text-slate-900 font-bold">{spec.stats.capacity}</span>
                       </div>
                     </div>
 
                     <button
                       onClick={() => handleOpenUpload({ selectedServices: [spec.id] })}
-                      className="px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center gap-1.5 transition-all"
+                      className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-cyan-600 hover:text-white border border-slate-200 text-slate-800 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105"
                     >
                       <span>Order This</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -265,16 +265,16 @@ export default function ServicesPage() {
 
         {/* Global SLA Guarantee Bar */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <div className="rounded-3xl p-8 bg-gradient-to-r from-cyan-950/60 via-slate-900/80 to-violet-950/60 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="rounded-3xl p-8 bg-white border-2 border-cyan-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-cyan-500 transition-all">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center shrink-0">
-                <Clock className="w-7 h-7 text-cyan-400" />
+              <div className="w-14 h-14 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center shrink-0">
+                <Clock className="w-7 h-7 text-cyan-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white font-display">
+                <h3 className="text-lg font-bold text-slate-900 font-display">
                   Guaranteed 3 to 24-Hour Express Turnaround
                 </h3>
-                <p className="text-xs text-slate-300 max-w-xl mt-1">
+                <p className="text-xs text-slate-600 max-w-xl mt-1">
                   Our Dhaka HQ operates 3 rotating 8-hour shifts around the clock. Your production never sleeps,
                   even over global holidays.
                 </p>
@@ -283,7 +283,7 @@ export default function ServicesPage() {
 
             <button
               onClick={() => handleOpenUpload()}
-              className="px-6 py-3 rounded-full bg-cyan-400 text-black font-extrabold text-xs shrink-0 hover:bg-cyan-300 transition-colors shadow-3d-glow"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-extrabold text-xs shrink-0 hover:from-cyan-500 hover:to-blue-500 shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               Start Free Pilot (5 Images)
             </button>

@@ -7,33 +7,40 @@ import {
   Sparkles, 
   Menu, 
   X, 
-  ChevronRight,
-  UploadCloud
+  ChevronDown, 
+  UploadCloud, 
+  ShieldCheck, 
+  Zap,
+  ArrowRight,
+  PhoneCall
 } from "lucide-react";
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SERVICES_3D } from "@/lib/constants";
 
 interface NavbarProps {
-  onOpenUpload?: () => void;
+  onOpenUpload?: (config?: any) => void;
 }
 
 export default function Navbar({ onOpenUpload }: NavbarProps) {
-  const [isMounted, setIsMounted] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
   const pathname = usePathname();
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (typeof window !== "undefined") {
+        setIsScrolled(window.scrollY > 20);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleCtaClick = () => {
+  const handleUploadClick = () => {
     if (onOpenUpload) {
       onOpenUpload();
     } else {
@@ -44,50 +51,101 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isMounted && isScrolled
-          ? "bg-[#070A11]/85 backdrop-blur-xl border-b border-white/10 shadow-glass-sm py-3"
-          : "bg-transparent border-b border-white/5 py-4"
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200/90 shadow-sm py-3"
+          : "bg-white/70 backdrop-blur-sm border-b border-slate-200/50 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Logo with Glowing 3D Badge */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-violet-600 p-[1px] shadow-3d-glow group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-[#070A11] rounded-[11px] flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
+          
+          {/* Logo & Brand Mark */}
+          <Link 
+            href="/" 
+            className="flex items-center gap-3 group focus:outline-none"
+          >
+            <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-cyan-600 via-sky-600 to-indigo-600 p-[1.5px] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
+                <Sparkles className="w-5 h-5 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />
               </div>
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-                  PICASA
-                </span>
-                <span className="text-[10px] font-mono font-bold tracking-widest text-cyan-400 bg-cyan-950/70 border border-cyan-800/80 px-1.5 py-0.5 rounded">
-                  2026 3D
-                </span>
-              </div>
-              <span className="text-[10px] font-medium tracking-wider text-slate-400 block -mt-1 font-mono">
-                LIMITED • POST-PRODUCTION
+
+            <div className="flex flex-col">
+              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 group-hover:text-cyan-700 transition-colors">
+                PICASA <span className="text-cyan-600">LIMITED</span>
+              </span>
+              <span className="text-[10px] font-mono tracking-wider text-slate-500 uppercase -mt-1 font-semibold">
+                3D Studio Edition • Dhaka HQ
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-md">
+          {/* Desktop Nav Links */}
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/80 backdrop-blur-md shadow-inner">
             {NAV_LINKS.map((link) => {
-              const isActive = link.href === "/" 
-                ? pathname === "/" 
-                : pathname.startsWith(link.href);
+              const isActive = isMounted && (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)));
+
+              if (link.href === "/services") {
+                return (
+                  <div 
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all duration-200 ${
+                        isActive
+                          ? "bg-white text-cyan-700 shadow-sm border border-slate-200/80 font-bold"
+                          : "text-slate-600 hover:text-slate-900 hover:bg-white/60 hover:-translate-y-0.5"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180" : ""}`} />
+                    </Link>
+
+                    {/* Services Dropdown Panel */}
+                    {servicesDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-white border border-slate-200 p-2 shadow-xl backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                        <div className="px-3 py-2 text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100">
+                          Creative Production Desks
+                        </div>
+                        <div className="mt-1 space-y-1">
+                          {SERVICES_3D.map((service) => (
+                            <Link
+                              key={service.id}
+                              href="/services"
+                              className="flex items-center justify-between p-2.5 rounded-xl hover:bg-slate-50 group/item transition-all hover:translate-x-1"
+                            >
+                              <div className="flex flex-col">
+                                <span className="text-xs font-bold text-slate-800 group-hover/item:text-cyan-700 transition-colors">
+                                  {service.title}
+                                </span>
+                                <span className="text-[10px] text-slate-500">
+                                  {service.badge}
+                                </span>
+                              </div>
+                              <span className="text-[10px] font-mono text-cyan-700 font-bold bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-100">
+                                {service.startingPrice}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
 
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-3d-glow font-bold"
-                      : "text-slate-300 hover:text-white hover:bg-white/[0.08]"
+                      ? "bg-white text-cyan-700 shadow-sm border border-slate-200/80 font-bold"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-white/60 hover:-translate-y-0.5"
                   }`}
                 >
                   {link.label}
@@ -96,98 +154,84 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
             })}
           </nav>
 
-          {/* Studio Status & CTA Button */}
-          <div className="hidden sm:flex items-center gap-4">
-            {/* Live Studio Status Pulse */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Dhaka Studio:</span>
-              <span className="text-emerald-400 font-bold">24/7 Active</span>
-            </div>
-
-            {/* Free Trial Button */}
-            <button
-              onClick={handleCtaClick}
-              className="relative group overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-[#070A11]"
+          {/* Right Action Buttons */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Link
+              href="/contact"
+              className="text-xs font-bold text-slate-700 hover:text-cyan-700 px-3.5 py-2 rounded-full hover:bg-slate-100/80 transition-all hover:-translate-y-0.5"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600 rounded-full group-hover:opacity-100 transition-opacity"></span>
-              <span className="relative flex items-center gap-2 px-5 py-2 rounded-full bg-[#070A11] text-xs font-bold text-white group-hover:bg-transparent transition-colors duration-200">
-                <UploadCloud className="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors" />
-                <span>Start Free Trial</span>
-                <span className="px-1.5 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px]">
-                  5 Free
-                </span>
-              </span>
+              Contact HQ
+            </Link>
+
+            <button
+              onClick={handleUploadClick}
+              className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-xs shadow-md hover:shadow-cyan-500/25 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-95 transition-all duration-300 flex items-center gap-2"
+            >
+              <UploadCloud className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Test 5 Images Free</span>
+              <ArrowRight className="w-3.5 h-3.5 opacity-80 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Mobile Menu Hamburger */}
           <div className="flex sm:hidden items-center gap-2">
             <button
-              onClick={handleCtaClick}
-              className="px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold flex items-center gap-1.5"
+              onClick={handleUploadClick}
+              className="p-2 rounded-full bg-cyan-600 text-white shadow-sm"
+              aria-label="Upload"
             >
-              <UploadCloud className="w-3.5 h-3.5" />
-              <span>5 Free</span>
+              <UploadCloud className="w-4 h-4" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white"
-              aria-label="Toggle menu"
+              className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 focus:outline-none"
+              aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
+
         </div>
+      </div>
 
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="sm:hidden mt-3 pt-3 pb-5 border-t border-white/10 space-y-2 bg-[#070A11]/95 backdrop-blur-2xl rounded-2xl px-3 animate-in slide-in-from-top-3 duration-200">
-            <div className="flex items-center justify-between py-2 px-3 text-[11px] font-mono text-slate-400 border-b border-white/5">
-              <span>Studio Desk Status:</span>
-              <span className="text-emerald-400 font-bold flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                24/7 Operations Online
-              </span>
-            </div>
-
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="sm:hidden px-4 pt-3 pb-6 bg-white/98 border-t border-slate-200 shadow-xl space-y-3">
+          <div className="space-y-1">
             {NAV_LINKS.map((link) => {
-              const isActive = link.href === "/" 
-                ? pathname === "/" 
-                : pathname.startsWith(link.href);
+              const isActive = isMounted && (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)));
 
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                  className={`block px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                     isActive
-                      ? "bg-cyan-500/15 text-cyan-300 font-bold border border-cyan-500/30"
-                      : "text-slate-200 hover:bg-white/5 hover:text-cyan-400"
+                      ? "bg-cyan-50 text-cyan-700 border border-cyan-200 font-bold"
+                      : "text-slate-700 hover:bg-slate-50"
                   }`}
                 >
-                  <span>{link.label}</span>
-                  <ChevronRight className="w-4 h-4 text-slate-500" />
+                  {link.label}
                 </Link>
               );
             })}
-
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleCtaClick();
-                }}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-3d-glow"
-              >
-                <UploadCloud className="w-4 h-4" />
-                <span>Upload 5 Test Images (Free)</span>
-              </button>
-            </div>
           </div>
-        )}
-      </div>
+
+          <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                handleUploadClick();
+              }}
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md"
+            >
+              <UploadCloud className="w-4 h-4" />
+              <span>Test 5 Images Free</span>
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
