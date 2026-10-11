@@ -11,12 +11,12 @@ export interface ServiceItem {
 }
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Interactive 3D", href: "#hero-3d" },
-  { label: "Before & After", href: "#comparison" },
-  { label: "Pricing Calculator", href: "#pricing" },
-  { label: "Why Picasa", href: "#trust" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const SERVICES_3D: ServiceItem[] = [

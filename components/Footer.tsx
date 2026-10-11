@@ -18,7 +18,7 @@ import {
 import { SERVICES_DATA, NAV_LINKS } from "@/lib/constants";
 
 interface FooterProps {
-  onOpenUpload: () => void;
+  onOpenUpload?: () => void;
 }
 
 export default function Footer({ onOpenUpload }: FooterProps) {

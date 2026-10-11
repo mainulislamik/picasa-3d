@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Hero3D from "@/components/Hero3D";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -10,7 +11,7 @@ import TrustStats from "@/components/TrustStats";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import UploadModal from "@/components/UploadModal";
-import { ArrowUp, Sparkles } from "lucide-react";
+import { ArrowUp, Sparkles, ArrowRight, Layers, Sliders, ShieldCheck } from "lucide-react";
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -52,20 +53,71 @@ export default function Home() {
       {/* 2. Flagship Interactive 3D Hero Section */}
       <Hero3D onOpenUpload={() => handleOpenUpload()} />
 
-      {/* 3. Sub-Pixel Dual-Layer Before/After Slider */}
-      <BeforeAfterSlider />
+      {/* 3. Sub-Pixel Dual-Layer Before/After Slider Teaser */}
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span className="text-xs font-mono font-bold tracking-wider text-cyan-300 uppercase">
+              Interactive Precision Inspection
+            </span>
+          </div>
+          <Link
+            href="/portfolio"
+            className="text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group"
+          >
+            <span>View Full Gallery Archive</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        <BeforeAfterSlider />
+      </section>
 
       {/* 4. 6 Core Services 3D Tilt Cards Grid */}
-      <Services3D 
-        onSelectService={handleSelectServiceFromCard}
-        onOpenUpload={() => handleOpenUpload()}
-      />
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Layers className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs font-mono font-bold tracking-wider text-cyan-300 uppercase">
+              Core Post-Production Capabilities
+            </span>
+          </div>
+          <Link
+            href="/services"
+            className="text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group"
+          >
+            <span>Explore Technical Specs</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        <Services3D 
+          onSelectService={handleSelectServiceFromCard}
+          onOpenUpload={() => handleOpenUpload()}
+        />
+      </section>
 
       {/* 5. Dynamic Real-Time Pricing Estimator */}
-      <PricingCalculator 
-        initialServiceId={calculatorServiceId}
-        onOpenUpload={(config) => handleOpenUpload(config)}
-      />
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Sliders className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs font-mono font-bold tracking-wider text-cyan-300 uppercase">
+              Instant Estimation Engine
+            </span>
+          </div>
+          <Link
+            href="/pricing"
+            className="text-xs font-mono font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group"
+          >
+            <span>Volume Tiers & Billing FAQ</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        <PricingCalculator 
+          initialServiceId={calculatorServiceId}
+          onOpenUpload={(config) => handleOpenUpload(config)}
+        />
+      </section>
 
       {/* 6. Enterprise Reliability & Trust Stats */}
       <TrustStats />
@@ -103,7 +155,6 @@ export default function Home() {
           </button>
         </aside>
       )}
-
     </main>
   );
 }
