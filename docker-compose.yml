@@ -1,0 +1,12 @@
+services:
+  picasa-3d:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: picasa_3d_portal
+    restart: unless-stopped
+    ports:
+      - "3095:3095"
+    environment:
+      - NODE_ENV=production
+      - PORT=3095
