@@ -36,26 +36,14 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-md p-1.5 transition-transform group-hover:scale-105">
-              <Image
-                src="/logo.svg"
-                alt="Picasa Limited Logo"
-                width={36}
-                height={36}
-                className="object-contain brightness-0 invert"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-cyan-600 transition-colors">
-                PICASA <span className="text-cyan-600 font-semibold text-sm">LTD</span>
-              </span>
-              <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 -mt-1 font-semibold">
-                Post-Production Studio
-              </span>
-            </div>
+          {/* Authentic Original Logo */}
+          <Link href="/" className="flex items-center shrink-0 group py-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.svg"
+              alt="Picasa Limited"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Nav Links */}

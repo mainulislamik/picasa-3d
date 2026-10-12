@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Hero3D from "@/components/Hero3D";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import StudioInspectorLab from "@/components/StudioInspectorLab";
 import AiVsHumanShowcase from "@/components/AiVsHumanShowcase";
 import Services3D from "@/components/Services3D";
@@ -55,7 +56,10 @@ export default function Home() {
       {/* 2. Flagship Interactive 3D Hero Section (With Cinematic Full-Bleed Running Video) */}
       <Hero3D onOpenUpload={() => handleOpenUpload()} />
 
-      {/* 3. Sub-Pixel Precision Studio Inspector Lab (RGB Splitter, Bezier Paths & 2.4x Loupe) */}
+      {/* 3. Micro-Precision Before & After Dual-Layer Inspection (Authentic Client Photo Benchmarks) */}
+      <BeforeAfterSlider />
+
+      {/* 4. Sub-Pixel Precision Studio Inspector Lab (RGB Splitter, Bezier Paths & 2.4x Loupe) */}
       <StudioInspectorLab />
 
       {/* 4. AI vs Human Specialist Breakdown (Why Global Brands Choose Picasa Pen Tools) */}

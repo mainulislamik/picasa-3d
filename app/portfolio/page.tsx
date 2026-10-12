@@ -29,8 +29,8 @@ export default function PortfolioPage() {
       industry: "Products",
       technique: "Sub-pixel Pen Vector Path & Drop Shadow",
       stats: "0.5px Anchor Accuracy • #FFFFFF Canvas",
-      beforeImg: "/wp-content/uploads/2021/01/cp_a.jpg",
-      afterImg: "/wp-content/uploads/2021/01/cp_b.jpg",
+      beforeImg: "/wp-content/uploads/2021/01/cp_b.jpg",
+      afterImg: "/wp-content/uploads/2021/01/cp_a.jpg",
       description: "Complex tread pattern, lace eyelets, and synthetic mesh isolated with surgical hand-drawn bezier curves."
     },
     {
@@ -39,8 +39,8 @@ export default function PortfolioPage() {
       industry: "Fashion",
       technique: "3D Hollow Garment Neck Joint & Drape",
       stats: "Inner Collar Stitching • Symmetrical Hem",
-      beforeImg: "/wp-content/uploads/2022/05/ghost-mannequin_A.jpg",
-      afterImg: "/wp-content/uploads/2022/05/ghost-mannequin_B.jpg",
+      beforeImg: "/wp-content/uploads/2021/01/neck_a.jpg",
+      afterImg: "/wp-content/uploads/2021/01/neck_b.jpg",
       description: "Combined front and interior collar shots to generate natural depth, hollow neck drape, and realistic cavity shading."
     },
     {
@@ -55,33 +55,43 @@ export default function PortfolioPage() {
     },
     {
       id: "sh-4",
-      title: "Cosmetics & Perfume Packaging",
+      title: "Apparel Background Removal & Isolation",
       industry: "Products",
-      technique: "Glass Transparency Mask & Specular Glare",
-      stats: "Refraction Retained • Pure Vector Clipping",
-      beforeImg: "/wp-content/uploads/2021/01/cp_a.jpg",
-      afterImg: "/wp-content/uploads/2021/01/cp_b.jpg",
-      description: "Fine frosted glass perfume flacon with compound fluid refraction and studio shadow gradient reconstruction."
+      technique: "Complex Fiber & Translucent Mesh Extraction",
+      stats: "Zero Color Spill • Alpha Channel Cutout",
+      beforeImg: "/wp-content/uploads/2022/05/ghost-mannequin_B.jpg",
+      afterImg: "/wp-content/uploads/2022/05/ghost-mannequin_A.jpg",
+      description: "High-volume catalog extraction eliminating studio gray backgrounds while preserving intricate textile silhouettes."
     },
     {
       id: "sh-5",
-      title: "Automotive Alloy Wheel & Brake Caliper",
-      industry: "Automotive",
-      technique: "Metallic Bevel Reflection Polish & Multi-Path",
-      stats: "Brake Rotor Radial Polish • Caliper Isolation",
-      beforeImg: "/wp-content/uploads/2022/06/Jewelry-Retouching-befor.jpg",
-      afterImg: "/wp-content/uploads/2022/06/Jewelry-Retouching-after.jpg",
-      description: "Aggressive industrial brake dust and tire glare eliminated to produce editorial hypercar catalog visuals."
+      title: "Editorial Fashion Model & Lookbook",
+      industry: "Fashion",
+      technique: "Skin Texture Preservation & Crease Cleanup",
+      stats: "Dermal Pore Integrity • Magazine Grade",
+      beforeImg: "/wp-content/uploads/2021/01/lookbook_1_b.jpg",
+      afterImg: "/wp-content/uploads/2021/01/lookbook_1_a.jpg",
+      description: "High-fashion lookbook retouch preserving natural skin tones while polishing fabric drape and lighting balance."
     },
     {
       id: "sh-6",
-      title: "Silk Evening Gown Drape",
-      industry: "Fashion",
-      technique: "Fabric Shading & Color Harmonic Alignment",
-      stats: "Delta-E < 1 • Crease Softening",
-      beforeImg: "/wp-content/uploads/2022/05/ghost-mannequin_A.jpg",
-      afterImg: "/wp-content/uploads/2022/05/ghost-mannequin_B.jpg",
-      description: "Dynamic wrinkle harmony retaining tactile weave feel while presenting high-end runway ready drape symmetry."
+      title: "Mirror Reflection & Floor Depth Shadow",
+      industry: "Products",
+      technique: "Progressive Penumbra & Specular Reflection",
+      stats: "Natural Studio Floor Ray Casting",
+      beforeImg: "/wp-content/uploads/2021/01/reflection_4_a.jpg",
+      afterImg: "/wp-content/uploads/2021/01/reflection_4_b.jpg",
+      description: "Ground-plane mirror reflection and diffuse contact shadows constructed to ground floating studio product photography."
+    },
+    {
+      id: "sh-7",
+      title: "Infinite Vector Logo & Redraw",
+      industry: "Automotive",
+      technique: "Precision Bezier Vectorization (SVG/AI)",
+      stats: "Lossless Scaling • CMYK / Spot Ready",
+      beforeImg: "/wp-content/uploads/2021/01/vector_a.jpg",
+      afterImg: "/wp-content/uploads/2021/01/vector_b.jpg",
+      description: "Pixelated low-resolution raster graphic reconstructed into mathematically pure vectors for large-format applications."
     }
   ];
 

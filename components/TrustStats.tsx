@@ -80,6 +80,46 @@ export default function TrustStats() {
           </div>
         </div>
 
+        {/* Authentic Facility Banner */}
+        <div className="mb-20 rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-7 relative h-72 sm:h-96 w-full overflow-hidden bg-slate-900">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/wp-content/uploads/2021/01/office_working.jpg"
+              alt="Picasa Limited Dhaka Production Floor"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+              <span className="text-white text-xs font-mono font-bold px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/20">
+                Picasa Limited Dhaka HQ • Level-5, Mohammadpur Studio
+              </span>
+            </div>
+          </div>
+          <div className="lg:col-span-5 p-8 sm:p-10 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono">
+              <Users className="w-3.5 h-3.5 text-cyan-600" />
+              <span>120+ FULL-TIME CRAFTSMEN</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              Real Humans. Zero Automated Shortcuts.
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Every curve, shadow, and collar joint is meticulously crafted by professional graphic artists working in our dedicated Dhaka facility. Three overlapping shifts ensure your images are processed around the clock without outsourcing.
+            </p>
+            <div className="pt-2 flex items-center gap-6 text-xs font-mono text-slate-500">
+              <div>
+                <span className="font-bold text-slate-900 block text-base">2,000+</span>
+                Daily Image Output
+              </div>
+              <div className="w-px h-8 bg-slate-200"></div>
+              <div>
+                <span className="font-bold text-slate-900 block text-base">99.8%</span>
+                First-Pass QC Rate
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 4 Enterprise Trust Badges */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {ENTERPRISE_BADGES.map((badge, idx) => (

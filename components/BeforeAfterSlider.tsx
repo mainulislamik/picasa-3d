@@ -13,7 +13,10 @@ import {
   Palette,
   Crosshair,
   Maximize2,
-  RotateCcw
+  RotateCcw,
+  Layers,
+  Sun,
+  Eye
 } from "lucide-react";
 import { COMPARISON_CATEGORIES } from "@/lib/constants";
 
@@ -118,8 +121,11 @@ export default function BeforeAfterSlider() {
             >
               {idx === 0 && <Scissors className="w-3.5 h-3.5" />}
               {idx === 1 && <Shirt className="w-3.5 h-3.5" />}
-              {idx === 2 && <Gem className="w-3.5 h-3.5" />}
-              {idx === 3 && <Palette className="w-3.5 h-3.5" />}
+              {idx === 2 && <Layers className="w-3.5 h-3.5" />}
+              {idx === 3 && <Sparkles className="w-3.5 h-3.5" />}
+              {idx === 4 && <Gem className="w-3.5 h-3.5" />}
+              {idx === 5 && <Sun className="w-3.5 h-3.5" />}
+              {idx === 6 && <Palette className="w-3.5 h-3.5" />}
               <span>{cat.title}</span>
             </button>
           ))}

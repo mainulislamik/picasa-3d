@@ -264,57 +264,66 @@ export const SERVICES_DATA = ALL_SERVICES;
 
 export const COMPARISON_CATEGORIES = [
   {
-    id: "ghost",
-    title: "Ghost Mannequin / Neck Joint",
-    subtitle: "Authentic 3D depth extraction combining garment front & back collar",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/ghost_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/ghost.jpg",
-    description: "Seamless 3D invisible mannequin neckline joints, symmetrical fabric drape alignment, and natural collar cavity shadow projection.",
-    tags: ["3D Neck Joint", "Symmetrical Drape", "Starts $0.65"]
-  },
-  {
     id: "clipping",
-    title: "Hand-Crafted Clipping Path",
+    title: "Clipping Path & Cut Out",
     subtitle: "100% hand-drawn vector pen tool bezier curves with zero edge halos",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/cutout_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/cutout.jpg",
+    beforeImage: "/wp-content/uploads/2021/01/cp_b.jpg",
+    afterImage: "/wp-content/uploads/2021/01/cp_a.jpg",
     description: "Every sole traction groove, eyelet, and lace is isolated with 0.5px sub-pixel pen tool precision. Transparent backgrounds with zero halos.",
     tags: ["0.5px Pen Accuracy", "Embedded PSD Path", "Starts $0.25"]
   },
   {
-    id: "retouch",
-    title: "High-End Beauty & Retouch",
+    id: "ghost",
+    title: "Ghost Mannequin / Neck Joint",
+    subtitle: "Authentic 3D depth extraction combining garment front & back collar",
+    beforeImage: "/wp-content/uploads/2021/01/neck_a.jpg",
+    afterImage: "/wp-content/uploads/2021/01/neck_b.jpg",
+    description: "Seamless 3D invisible mannequin neckline joints, symmetrical fabric drape alignment, and natural collar cavity shadow projection.",
+    tags: ["3D Neck Joint", "Symmetrical Drape", "Starts $0.65"]
+  },
+  {
+    id: "bg-remove",
+    title: "Background Removal & Replacement",
+    subtitle: "Pixel-perfect subject extraction on pure #FFFFFF Amazon/eBay canvas",
+    beforeImage: "/wp-content/uploads/2022/05/ghost-mannequin_B.jpg",
+    afterImage: "/wp-content/uploads/2022/05/ghost-mannequin_A.jpg",
+    description: "Precision extraction of complex apparel, preserving sheer fabrics, fine hem fringes, and subtle edge lighting.",
+    tags: ["Zero Color Spill", "Alpha Channel Mask", "Starts $0.25"]
+  },
+  {
+    id: "retouch-fashion",
+    title: "Fashion & Lookbook Retouch",
     subtitle: "Non-destructive frequency separation and realistic skin pore texture",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/retouching_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/retouching.jpg",
-    description: "Micro-scratches and studio dust removed while preserving crisp metallic bevels, facet refraction, and luxury brilliance.",
-    tags: ["Dermal Pore Retained", "Specular Highlights", "Starts $0.80"]
+    beforeImage: "/wp-content/uploads/2021/01/lookbook_1_b.jpg",
+    afterImage: "/wp-content/uploads/2021/01/lookbook_1_a.jpg",
+    description: "Micro-blemishes and studio fabric wrinkles eliminated while preserving natural skin pores, specular highlights, and textile drape.",
+    tags: ["Dermal Pore Retained", "Editorial Finish", "Starts $0.80"]
+  },
+  {
+    id: "retouch-jewelry",
+    title: "Jewelry & Luxury Retouching",
+    subtitle: "Micro-dust elimination, facet sparkle and specular highlight polish",
+    beforeImage: "/wp-content/uploads/2022/06/Jewelry-Retouching-befor.jpg",
+    afterImage: "/wp-content/uploads/2022/06/Jewelry-Retouching-after.jpg",
+    description: "Workbench scratches and micro-dust specks polished away without softening facet edges, prong claws, or gemstone refraction.",
+    tags: ["Zero Micro-Dust", "Facet Brilliance", "Starts $1.20"]
   },
   {
     id: "shadow",
     title: "Natural & Drop Shadow",
-    subtitle: "Realistic studio light ray projection and glass reflection blending",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/shadow_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/shadow.jpg",
+    subtitle: "Realistic studio light ray projection and mirror reflection blending",
+    beforeImage: "/wp-content/uploads/2021/01/reflection_4_a.jpg",
+    afterImage: "/wp-content/uploads/2021/01/reflection_4_b.jpg",
     description: "Creates soft progressive depth-of-field floor shadows and ground plane reflections matching exact camera angle lighting.",
     tags: ["Progressive Penumbra", "Ground Plane Contact", "Starts $0.40"]
-  },
-  {
-    id: "color",
-    title: "Color Swatch Matching",
-    subtitle: "Pantone & physical swatch calibration with zero color drift",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/color_correction_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/color.jpg",
-    description: "Pantone and physical fabric swatch calibration across whole batches with zero color drift between product catalog items.",
-    tags: ["Pantone Calibrated", "Multi-Color Variant", "Starts $0.45"]
   },
   {
     id: "raster",
     title: "Raster to Vector Redraw",
     subtitle: "Infinite resolution manual vectorization into clean SVG & AI",
-    beforeImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/raster_before_after.jpg",
-    afterImage: "/wp-content/themes/picasalimited/assets/images/image-post-production/raster.jpg",
-    description: "Hand-traced geometric precision vector files ready for large format print, embroidery, and digital publication.",
+    beforeImage: "/wp-content/uploads/2021/01/vector_a.jpg",
+    afterImage: "/wp-content/uploads/2021/01/vector_b.jpg",
+    description: "Hand-traced geometric precision vector files ready for large format print, embroidery, CNC cutting, and digital publication.",
     tags: ["Infinite Scaling", "CMYK Spot Ready", "Starts $1.50"]
   }
 ];

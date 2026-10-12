@@ -44,23 +44,14 @@ export default function Footer() {
           
           {/* Brand & Studio Information */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-md p-1.5 flex items-center justify-center">
-                <Image
+            <Link href="/" className="inline-block group">
+              <div className="bg-white px-3.5 py-2 rounded-xl border border-slate-700/60 shadow-lg inline-flex items-center transition-all group-hover:bg-white/95">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/logo.svg"
-                  alt="Picasa Limited Logo"
-                  width={32}
-                  height={32}
-                  className="object-contain brightness-0 invert"
+                  alt="Picasa Limited"
+                  className="h-8 w-auto object-contain"
                 />
-              </div>
-              <div>
-                <span className="font-extrabold text-xl text-white tracking-tight">
-                  PICASA <span className="text-cyan-400">LTD</span>
-                </span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block -mt-1 font-semibold">
-                  Post-Production Studio
-                </span>
               </div>
             </Link>
 
