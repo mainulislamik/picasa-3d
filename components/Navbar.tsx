@@ -15,7 +15,6 @@ import {
   FileCheck2,
   PhoneCall
 } from "lucide-react";
-import WorldClockBar from "@/components/WorldClockBar";
 import { ALL_SERVICES, NAV_LINKS, STUDIO_CONTACT } from "@/lib/constants";
 
 interface NavbarProps {
@@ -29,9 +28,6 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full flex flex-col shadow-sm">
-      {/* 24/5 Operations & World Clocks Top Bar */}
-      <WorldClockBar />
-
       {/* Main Glassmorphic Navigation Bar */}
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
