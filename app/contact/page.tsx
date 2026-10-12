@@ -123,7 +123,7 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">Studio Facility Address</span>
-                      <span>Dhaka 1212, Bangladesh</span>
+                      <span>Level-5, B-3, Block-E, Zakir Hossain Road, Mohammadpur, Dhaka, Bangladesh</span>
                     </div>
                   </div>
 
@@ -131,8 +131,8 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">General & Enterprise Inquiries</span>
-                      <a href="mailto:info@picasalimited.com" className="hover:text-cyan-700 transition-colors">
-                        info@picasalimited.com
+                      <a href="mailto:contact@picasalimited.com" className="hover:text-cyan-700 transition-colors">
+                        contact@picasalimited.com
                       </a>
                     </div>
                   </div>
@@ -141,7 +141,9 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">Studio Hotline & WhatsApp</span>
-                      <span>+880 1711-000000 / +1 (800) PICASA</span>
+                      <a href="tel:+8801717833075" className="hover:text-cyan-700 font-mono">
+                        +880 1717-833075 / +880 1886-063201
+                      </a>
                     </div>
                   </div>
 
@@ -149,7 +151,7 @@ export default function ContactPage() {
                     <Clock className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-emerald-700 block">Operating Hours</span>
-                      <span>24 Hours / 7 Days a Week (Tri-Shift Continuous)</span>
+                      <span>24/5 Production Schedule (3 Shifts Rotating, Dhaka HQ UTC+6)</span>
                     </div>
                   </div>
                 </div>

@@ -26,24 +26,24 @@ export default function AboutPage() {
 
   const TIMELINE_MILESTONES = [
     {
-      year: "2018",
-      title: "Founding in Dhaka",
-      desc: "Started with 12 senior DTP graphic artists delivering clipping paths to UK and Scandinavian photo studios."
+      year: "2016",
+      title: "Founding in Mohammadpur, Dhaka",
+      desc: "Established with senior DTP and Photoshop craftsmen delivering 100% hand-drawn vector clipping paths to European and US fashion catalog clients."
     },
     {
-      year: "2021",
+      year: "2019",
       title: "Enterprise Studio Scaling",
-      desc: "Expanded to 85+ full-time artists, introducing high-end jewelry frequency separation and automated FTP ingestion."
+      desc: "Expanded to 60+ full-time artists, introducing high-end jewelry frequency separation, 3D ghost mannequin neck joints, and secure cloud ingestion."
     },
     {
-      year: "2024",
-      title: "24/7 Global Tri-Shift Operations",
-      desc: "Established round-the-clock shift cycles serving over 400 e-commerce brands across North America, Europe, and Asia."
+      year: "2023",
+      title: "24/5 Tri-Shift Operations",
+      desc: "Established rotating 8-hour shift cycles serving over 109 global enterprise clients including Mango, True Religion, Fossil Group, Forbes, and Inc."
     },
     {
       year: "2026",
-      title: "Next-Gen 3D & Hybrid Pipeline",
-      desc: "180+ in-house artists equipped with color-calibrated EIZO monitors, sub-pixel pen tablet workflows, and strict ISO/NDA controls."
+      title: "Picasa 3D & Advanced Post-Production",
+      desc: "120+ in-house artists equipped with color-calibrated displays, sub-pixel pen tablet workflows, commercial video reels, and strict ISO/e-NDA controls."
     }
   ];
 

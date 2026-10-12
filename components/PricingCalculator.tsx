@@ -25,12 +25,12 @@ import { calculatePricingEstimate, formatCurrency } from "@/lib/utils";
 
 interface PricingCalculatorProps {
   initialServiceId?: string;
-  onOpenUpload: (config?: any) => void;
+  onOpenUpload?: (config?: any) => void;
 }
 
 export default function PricingCalculator({ 
   initialServiceId = "clipping", 
-  onOpenUpload 
+  onOpenUpload = () => {}
 }: PricingCalculatorProps) {
   const [selectedServiceId, setSelectedServiceId] = useState(initialServiceId);
   const [selectedComplexity, setSelectedComplexity] = useState("simple");

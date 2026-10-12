@@ -2,173 +2,196 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
-  Sparkles, 
-  ShieldCheck, 
-  Clock, 
-  MapPin, 
   Mail, 
   Phone, 
-  Globe2, 
-  Layers, 
-  CheckCircle2,
-  FileCheck2,
-  ArrowUpRight
+  MapPin, 
+  ShieldCheck, 
+  Clock, 
+  FileCheck2, 
+  Search, 
+  Sparkles,
+  ArrowRight,
+  ExternalLink
 } from "lucide-react";
-import { SERVICES_DATA, NAV_LINKS } from "@/lib/constants";
+import { ALL_SERVICES, STUDIO_CONTACT, ENTERPRISE_BADGES } from "@/lib/constants";
 
-interface FooterProps {
-  onOpenUpload?: () => void;
-}
-
-export default function Footer({ onOpenUpload }: FooterProps) {
+export default function Footer() {
   return (
-    <footer className="bg-slate-100 border-t border-slate-200 text-slate-600 text-xs relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-cyan-500/5 blur-[160px] pointer-events-none rounded-full"></div>
+    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 text-sm">
+      
+      {/* Enterprise Trust Ribbon */}
+      <div className="border-b border-slate-800 py-10 bg-slate-950/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {ENTERPRISE_BADGES.map((badge, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-white uppercase tracking-wider">{badge.title}</h4>
+                <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">{badge.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+      {/* Main Footer Directory */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
-          {/* Column 1: Brand & Studio Description (Col 4) */}
-          <div className="lg:col-span-4 space-y-4">
+          {/* Brand & Studio Information */}
+          <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative py-1 flex items-center">
-                <img 
-                  src="/logo.svg" 
-                  alt="Picasa Limited" 
-                  className="h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 shadow-md p-1.5 flex items-center justify-center">
+                <Image
+                  src="/logo.svg"
+                  alt="Picasa Limited Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain brightness-0 invert"
                 />
               </div>
-              <span className="text-[10px] font-mono text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 uppercase font-bold">
-                3D Studio
-              </span>
-            </Link>
-
-            <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
-              Global B2B image editing and creative post-production studio. High-velocity hand-drawn clipping paths, ghost mannequin, and editorial retouching for Fortune 500 fashion and luxury brands.
-            </p>
-
-            {/* Live Studio Operations Pulse Badge */}
-            <div className="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1.5 max-w-sm shadow-sm">
-              <div className="flex items-center justify-between text-[11px] font-mono">
-                <span className="text-slate-800 font-bold">Dhaka Studio Hub:</span>
-                <span className="text-emerald-700 font-bold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  24/7 Shift Active
+              <div>
+                <span className="font-extrabold text-xl text-white tracking-tight">
+                  PICASA <span className="text-cyan-400">LTD</span>
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block -mt-1 font-semibold">
+                  Post-Production Studio
                 </span>
               </div>
-              <div className="flex justify-between text-[10px] font-mono text-slate-500">
-                <span>ACTIVE DESKS: 180+ SPECIALISTS</span>
-                <span>DAILY SLA: 2,000+ SKUS</span>
+            </Link>
+
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Global B2B post-production studio founded in 2016. Powered by 120+ craftsmen in Dhaka HQ delivering 100% hand-crafted clipping paths, 3D ghost mannequins, and high-end beauty retouching to leading fashion houses and retailers.
+            </p>
+
+            <div className="space-y-2 text-xs text-slate-300 pt-2">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <span>{STUDIO_CONTACT.address}</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
+                <a href={`tel:${STUDIO_CONTACT.phone}`} className="hover:text-white font-mono">
+                  {STUDIO_CONTACT.phone}
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                <a href={`mailto:${STUDIO_CONTACT.email}`} className="hover:text-white">
+                  {STUDIO_CONTACT.email}
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>{STUDIO_CONTACT.hours}</span>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Core Services Index (Col 3) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wider font-mono">
-              CREATIVE DESKS
+          {/* Core Services (Col 1) */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
+              Post-Production
             </h4>
-            <ul className="space-y-2">
-              {SERVICES_DATA.map((srv) => (
-                <li key={srv.id}>
-                  <Link
-                    href={`/services#${srv.id}`}
-                    className="hover:text-cyan-700 hover:translate-x-1 transition-all duration-200 flex items-center justify-between group"
+            <ul className="space-y-2 text-xs">
+              {ALL_SERVICES.slice(0, 6).map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    href={`/services#${service.id}`}
+                    className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center justify-between"
                   >
-                    <span>{srv.title}</span>
-                    <span className="text-[10px] font-mono text-slate-400 group-hover:text-cyan-600 font-semibold">
-                      {srv.startingPrice}
-                    </span>
+                    <span>{service.title}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Quick Navigation (Col 2) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wider font-mono">
-              PLATFORM
+          {/* Creative, Motion & 3D (Col 2) */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
+              Creative & Motion
             </h4>
-            <ul className="space-y-2">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-cyan-700 hover:translate-x-1 transition-all duration-200 block">
-                    {link.label}
+            <ul className="space-y-2 text-xs">
+              {ALL_SERVICES.slice(6, 12).map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    href={`/services#${service.id}`}
+                    className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center justify-between"
+                  >
+                    <span>{service.title}</span>
                   </Link>
                 </li>
               ))}
-              {onOpenUpload && (
-                <li>
-                  <button
-                    onClick={onOpenUpload}
-                    className="text-cyan-700 font-bold hover:underline flex items-center gap-1 hover:translate-x-1 transition-all duration-200"
-                  >
-                    <span>Upload 5 Free Images</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </button>
-                </li>
-              )}
             </ul>
           </div>
 
-          {/* Column 4: Contact & Verification (Col 3) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wider font-mono">
-              STUDIO DESK HQ
+          {/* Enterprise Portals & Legal */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">
+              Client Portals
             </h4>
-            
-            <div className="space-y-2 text-xs">
-              <div className="flex items-start gap-2 text-slate-600">
-                <MapPin className="w-4 h-4 text-cyan-600 shrink-0 mt-0.5" />
-                <span>House 38, Road 02, Block C, Banasree, Rampura, Dhaka-1219, Bangladesh</span>
-              </div>
-
-              <div className="flex items-center gap-2 text-slate-600">
-                <Mail className="w-4 h-4 text-cyan-600 shrink-0" />
-                <a href="mailto:info@picasalimited.com" className="hover:text-cyan-700 transition-colors">
-                  info@picasalimited.com
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2 text-slate-600">
-                <Phone className="w-4 h-4 text-cyan-600 shrink-0" />
-                <a href="tel:+8801717833075" className="hover:text-cyan-700 font-mono transition-colors">
-                  +880 1717-833075
-                </a>
-              </div>
-            </div>
-
-            <div className="pt-2 flex items-center gap-2">
-              <span className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[10px] font-mono text-emerald-700 font-bold flex items-center gap-1 shadow-sm">
-                <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                ISO 27001
-              </span>
-              <span className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[10px] font-mono text-cyan-700 font-bold flex items-center gap-1 shadow-sm">
-                <FileCheck2 className="w-3 h-3 text-cyan-600" />
-                BILATERAL NDA
-              </span>
-            </div>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <Link href="/free-test" className="text-cyan-300 hover:text-white font-bold flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Free Test (3 Images)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/track-order" className="text-slate-400 hover:text-white flex items-center gap-1.5">
+                  <Search className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Track Production Batch</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/nda" className="text-slate-400 hover:text-white flex items-center gap-1.5">
+                  <FileCheck2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Execute Mutual NDA</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-slate-400 hover:text-white">
+                  Volume Rate Matrix
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="text-slate-400 hover:text-white">
+                  Interactive Works Showcase
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-slate-400 hover:text-white">
+                  Dhaka Studio Team & History
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-slate-400 hover:text-white">
+                  Direct Contact & Quotes
+                </Link>
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Copyright & Compliance */}
-        <div className="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
-          <div>
-            © 2026 PICASA LIMITED. ALL RIGHTS RESERVED. 2026 3D EDITION.
-          </div>
-
+        {/* Bottom Legal / Copyright */}
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>
+            © 2016 - {new Date().getFullYear()} Picasa Limited. All rights reserved. Registered in Dhaka, Bangladesh.
+          </p>
           <div className="flex items-center gap-6">
-            <Link href="/about" className="hover:text-slate-800 transition-colors">Privacy & Data Security</Link>
-            <Link href="/about" className="hover:text-slate-800 transition-colors">Bilateral NDA Terms</Link>
-            <Link href="/pricing" className="hover:text-slate-800 transition-colors">Enterprise SLA</Link>
+            <Link href="/nda" className="hover:text-slate-300">Privacy & NDA</Link>
+            <Link href="/pricing" className="hover:text-slate-300">Terms of SLA</Link>
+            <Link href="/contact" className="hover:text-slate-300">Security & GDPR</Link>
           </div>
         </div>
-
       </div>
+
     </footer>
   );
 }
