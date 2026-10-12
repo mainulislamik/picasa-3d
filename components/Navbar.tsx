@@ -133,6 +133,14 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
               </div>
 
               <Link 
+                href="/how-it-works" 
+                onClick={handleLinkClick}
+                className={`hover:text-rose-600 transition-colors ${pathname === "/how-it-works" ? "text-rose-600 font-bold" : ""}`}
+              >
+                How It Works
+              </Link>
+
+              <Link 
                 href="/portfolio" 
                 onClick={handleLinkClick}
                 className={`hover:text-rose-600 transition-colors ${pathname === "/portfolio" ? "text-rose-600 font-bold" : ""}`}

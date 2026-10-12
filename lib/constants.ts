@@ -17,6 +17,7 @@ export interface ServiceItem {
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "How It Works", href: "/how-it-works" },
   { label: "Our Works", href: "/portfolio" },
   { label: "Pricing", href: "/pricing" },
   { label: "Free Test", href: "/free-test" },
@@ -404,3 +405,212 @@ export const STUDIO_CONTACT = {
   whatsapp: "+880 1717-833075",
   hours: "24/5 Production Schedule (Dhaka HQ UTC+6)"
 };
+
+/* ========================================================
+   ENTERPRISE PRODUCTION PIPELINE & CONVERTING BUSINESS SPEC
+   (100% Original, Technical, SLA-Driven for Picasa Limited)
+   ======================================================== */
+
+export interface PipelineStep {
+  step: string;
+  number: string;
+  title: string;
+  subtitle: string;
+  duration: string;
+  description: string;
+  technicalDetails: string[];
+  icon: string;
+}
+
+export const PRODUCTION_PIPELINE_STEPS: PipelineStep[] = [
+  {
+    step: "Stage 01",
+    number: "01",
+    title: "Secure Intake & Automated MD5 Scan",
+    subtitle: "Air-gapped staging & automated checksum validation",
+    duration: "< 15 Mins",
+    description: "Submit RAW or raster assets via direct SFTP, Amazon S3 bucket, Aspera, Dropbox Business, or our web portal. Every file receives an MD5 checksum verification to ensure zero data corruption.",
+    technicalDetails: [
+      "Dedicated client-specific encrypted staging folder",
+      "Automated resolution, DPI, and color space integrity audit",
+      "Instant intake confirmation receipt and SLA countdown start",
+      "Immediate bi-lateral Non-Disclosure Agreement (NDA) coverage"
+    ],
+    icon: "UploadCloud"
+  },
+  {
+    step: "Stage 02",
+    number: "02",
+    title: "Custom Spec Sheet & Station Allocation",
+    subtitle: "Assigned to specialized master production desks",
+    duration: "< 20 Mins",
+    description: "Our shift supervisor reviews your technical guidelines (e.g., pure white RGB 255, 85% frame fill, drop shadow angle, or multi-path naming) and dispatches assets to specialized artist pods.",
+    technicalDetails: [
+      "Domain-specific team allocation (Apparel, Luxury Jewelry, Beauty)",
+      "Strict guideline synchronization across all shift artists",
+      "Color profile calibration against client master swatch targets",
+      "Real-time batch tracking ID generated for client visibility"
+    ],
+    icon: "Sliders"
+  },
+  {
+    step: "Stage 03",
+    number: "03",
+    title: "Sub-Pixel Hand Crafting & Layering",
+    subtitle: "100% human pen-tool artisans in Dhaka HQ",
+    duration: "2h - 8h Active",
+    description: "Our 120+ full-time specialists execute meticulous Adobe Photoshop work: 0.5px hand-drawn vector paths, non-destructive frequency separation, symmetrical collar joints, and realistic shadow drops.",
+    technicalDetails: [
+      "Hand-drawn Bezier curves with 0.5px interior feather compensation",
+      "Multi-frequency dermal texture isolation for organic skin pores",
+      "Ghost mannequin anatomical neck joint stitching and inner tag alignment",
+      "Zero automated AI haloing, zero blurred boundary artifacts"
+    ],
+    icon: "PenTool"
+  },
+  {
+    step: "Stage 04",
+    number: "04",
+    title: "Dual-Monitor Senior QC Review",
+    subtitle: "500% Loupe Pixel Audit before sign-off",
+    duration: "< 30 Mins",
+    description: "Every image undergoes rigorous dual-monitor inspection by dedicated Quality Control Leads with 8+ years of post-production experience. Discrepancies are flagged and corrected before delivery.",
+    technicalDetails: [
+      "500% zoom audit on high-contrast black/white inspection mats",
+      "Marketplace compliance check (Amazon, Shopify, Farfetch, Google)",
+      "Alpha channel transparency and fringe edge verification",
+      "100% satisfaction guarantee with immediate complimentary revisions"
+    ],
+    icon: "ShieldCheck"
+  },
+  {
+    step: "Stage 05",
+    number: "05",
+    title: "Encrypted Dispatch & Consolidated Billing",
+    subtitle: "Instant cloud delivery & flexible payment terms",
+    duration: "Immediate",
+    description: "Processed files are packaged in your exact required directory hierarchy and synchronized back to your SFTP, S3, or Dropbox. Enterprise accounts enjoy monthly consolidated invoicing with NET-15/NET-30 terms.",
+    technicalDetails: [
+      "Delivery in multi-format packages (Layered PSD, sRGB WebP, PNG, JPG)",
+      "Automated webhook notifications or instant email dispatch link",
+      "Flexible payment: Pay-as-you-go, or consolidated monthly invoice",
+      "Supported corporate payment rails: Bank Wire, ACH, Wise, Payoneer, Stripe"
+    ],
+    icon: "CheckCircle2"
+  }
+];
+
+export const TRANSFER_PROTOCOLS = [
+  {
+    name: "Dedicated SFTP / FTP Server",
+    type: "High-Volume Automation",
+    badge: "Enterprise Recommended",
+    description: "Direct server-to-server file synchronization with dedicated high-speed bandwidth. Ideal for studios processing 500+ assets daily.",
+    features: ["Custom client credentials", "Automated batch pickup/drop", "Zero file size ceiling", "TLS 1.3 encrypted"]
+  },
+  {
+    name: "Amazon AWS S3 Bucket",
+    type: "Cloud Native Storage",
+    badge: "Direct Cloud Sync",
+    description: "Direct IAM role integration with your AWS S3 storage for seamless e-commerce pipeline automation without manual re-uploading.",
+    features: ["Cross-account IAM policy", "Instant bucket webhook triggers", "Zero egress throttling", "Multi-region redundancy"]
+  },
+  {
+    name: "Dropbox Business & Google Workspace",
+    type: "Collaborative Drive",
+    badge: "Instant Shared Folder",
+    description: "Simply share a project folder with our dispatch desk. We pick up RAW files and drop retouched deliverables directly into your organized folders.",
+    features: ["Frictionless team sharing", "Version history tracking", "Mobile & desktop sync", "No technical setup required"]
+  },
+  {
+    name: "Aspera & WeTransfer Enterprise",
+    type: "Accelerated UDP Transfer",
+    badge: "Ultra-Fast Delivery",
+    description: "IBM Aspera high-speed transfer or WeTransfer Enterprise links for multi-gigabyte commercial RAW packages and video projects.",
+    features: ["Up to 100x FTP transfer speed", "Packet-loss resilient", "Instant link delivery", "Long-term archive links"]
+  }
+];
+
+export const ENTERPRISE_BILLING_TERMS = [
+  {
+    id: "free-trial",
+    title: "Zero-Risk Production Trial",
+    badge: "Free (Up to 3 Images)",
+    priceDesc: "$0.00 Initial Investment",
+    turnaround: "Under 4 Hours",
+    description: "Experience our sub-pixel hand craftsmanship firsthand with zero commercial commitment or credit card required.",
+    features: [
+      "Submit up to 3 of your own complex test images",
+      "Complete technical specification review and feedback",
+      "Layered master PSD and web deliverables returned",
+      "Comprehensive turnaround and volume quote within 45 minutes"
+    ],
+    ctaText: "Start Free 3-Image Test",
+    ctaLink: "/free-test",
+    highlight: false
+  },
+  {
+    id: "pay-as-you-go",
+    title: "Pay-As-You-Go Batches",
+    badge: "Flexible / No Minimums",
+    priceDesc: "From $0.25 / Image",
+    turnaround: "12h - 24h Guaranteed",
+    description: "Perfect for independent photographers, boutique brands, and seasonal campaigns with fluctuating image volumes.",
+    features: [
+      "No monthly minimum contract or subscription required",
+      "Transparent per-image pricing with instant quote preview",
+      "Standard 24-hour delivery with 6-hour rush desk available",
+      "Instant payment via Credit Card, Stripe, or PayPal"
+    ],
+    ctaText: "Calculate Instant Quote",
+    ctaLink: "/pricing",
+    highlight: false
+  },
+  {
+    id: "monthly-invoiced",
+    title: "Consolidated Monthly Invoicing",
+    badge: "Enterprise Standard",
+    priceDesc: "NET-15 / NET-30 Terms",
+    turnaround: "Priority 3-Shift Queue",
+    description: "Designed for high-volume retail catalogs, global agency partners, and continuous production photography studios.",
+    features: [
+      "Consolidated monthly statement itemized by project & SKU",
+      "NET-15 or NET-30 payment terms upon credit approval",
+      "Dedicated Senior Lead Artist and dedicated SFTP account",
+      "Payment via Bank Wire (SWIFT/ACH), Wise, Payoneer, or Corporate Card"
+    ],
+    ctaText: "Open Corporate Account",
+    ctaLink: "/contact",
+    highlight: true
+  }
+];
+
+export const GLOBAL_OFFICES = [
+  {
+    region: "Global Production Master Studio",
+    location: "Dhaka, Bangladesh",
+    address: "Level-5, B-3, Block-E, Zakir Hossain Road, Mohammadpur, Dhaka 1207",
+    capacity: "120+ In-House Specialists · Tri-Shift 24/5 Production",
+    connectivity: "Dual Redundant Gigabit Fiber · Uninterruptible Power Supply (UPS)",
+    contact: "studio@picasalimited.com · +880 1717-833075",
+    isHQ: true
+  },
+  {
+    region: "North America Client Desk",
+    location: "New York, NY, USA",
+    address: "Manhattan Client Coordination & Account Management",
+    capacity: "Enterprise SLA Management & Photographic Art Direction",
+    connectivity: "Direct EST / CST Working Hours Coverage",
+    contact: "us-accounts@picasalimited.com",
+    isHQ: false
+  },
+  {
+    region: "European Liaison Desk",
+    location: "London, United Kingdom",
+    address: "Mayfair Client Services & Retail Catalog Ingestion",
+    capacity: "E-Commerce Standards Advisory & Corporate Invoicing",
+    connectivity: "Direct GMT / CET Working Hours Coverage",
+    contact: "eu-accounts@picasalimited.com",
+    isHQ: false
+  }
+];

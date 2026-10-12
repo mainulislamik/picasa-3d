@@ -13,7 +13,8 @@ import {
   Search, 
   Sparkles,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Layers
 } from "lucide-react";
 import { ALL_SERVICES, STUDIO_CONTACT, ENTERPRISE_BADGES } from "@/lib/constants";
 
@@ -143,6 +144,12 @@ export default function Footer() {
                 <Link href="/nda" className="text-slate-400 hover:text-white flex items-center gap-1.5">
                   <FileCheck2 className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Execute Mutual NDA</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/how-it-works" className="text-slate-400 hover:text-white flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-rose-400" />
+                  <span>How It Works & Pipeline</span>
                 </Link>
               </li>
               <li>

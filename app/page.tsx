@@ -8,9 +8,11 @@ import LiveProductionFeed from "@/components/LiveProductionFeed";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import StudioInspectorLab from "@/components/StudioInspectorLab";
 import EnterpriseStandardsChecker from "@/components/EnterpriseStandardsChecker";
+import ProductionPipelineWorkflow from "@/components/ProductionPipelineWorkflow";
 import AiVsHumanShowcase from "@/components/AiVsHumanShowcase";
 import Services3D from "@/components/Services3D";
 import PricingCalculator from "@/components/PricingCalculator";
+import EnterpriseBillingSection from "@/components/EnterpriseBillingSection";
 import TrustStats from "@/components/TrustStats";
 import CommercialVideoReel from "@/components/CommercialVideoReel";
 import FAQSection from "@/components/FAQSection";
@@ -73,6 +75,9 @@ export default function Home() {
       {/* 4.5 Enterprise Marketplace Standards & Automated Acceptance Diagnostic */}
       <EnterpriseStandardsChecker />
 
+      {/* 4.8 Industrial 5-Stage Production Engine & File Ingestion Workflow */}
+      <ProductionPipelineWorkflow />
+
       {/* 5. AI vs Human Specialist Breakdown (Why Global Brands Choose Picasa Pen Tools) */}
       <AiVsHumanShowcase />
 
@@ -123,6 +128,9 @@ export default function Home() {
         </div>
         <PricingCalculator initialServiceId={calculatorServiceId} />
       </section>
+
+      {/* 7.5 Frictionless Corporate Billing & Flexible Monthly Invoicing */}
+      <EnterpriseBillingSection />
 
       {/* 8. Verified Enterprise Trust & SLA Statistics */}
       <TrustStats />
