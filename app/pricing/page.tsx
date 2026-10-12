@@ -75,20 +75,20 @@ export default function PricingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-rose-600 selection:text-white">
       <Navbar onOpenUpload={() => handleOpenUpload()} />
 
       <main className="flex-1 pt-28 pb-20">
         {/* Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>TRANSPARENT SCALE-DRIVEN PRICING</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 font-display mb-4">
             Predictable Production Rates, <br />
-            <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 bg-clip-text text-transparent">
               Zero Hidden Charges
             </span>
           </h1>
@@ -104,7 +104,7 @@ export default function PricingPage() {
         {/* Enterprise Volume Discount Table */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <div className="text-center mb-10">
-            <span className="text-xs font-mono text-cyan-700 uppercase tracking-widest font-bold">
+            <span className="text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
               High-Volume Accounts
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-1">
@@ -119,7 +119,7 @@ export default function PricingPage() {
             {ENTERPRISE_TIERS.map((tier, idx) => (
               <div 
                 key={idx}
-                className="rounded-3xl p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-400 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
+                className="rounded-3xl p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -135,7 +135,7 @@ export default function PricingPage() {
 
                   <div className="space-y-3 mt-6 border-t border-slate-100 pt-6 text-xs text-slate-700">
                     <div className="flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-cyan-600 shrink-0" />
+                      <Zap className="w-4 h-4 text-rose-600 shrink-0" />
                       <span>{tier.sla}</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export default function PricingPage() {
                 <div className="mt-8 pt-6 border-t border-slate-100">
                   <button
                     onClick={() => handleOpenUpload({ instructions: `Enterprise Tier inquiry: ${tier.monthlyVolume}` })}
-                    className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-cyan-600 hover:text-white border border-slate-200 text-slate-800 text-xs font-bold transition-all hover:scale-[1.02]"
+                    className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-rose-600 hover:text-white border border-slate-200 text-slate-800 text-xs font-bold transition-all hover:scale-[1.02]"
                   >
                     Discuss Enterprise Contract
                   </button>
@@ -180,7 +180,7 @@ export default function PricingPage() {
                 className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-slate-300 hover:shadow-md transition-all"
               >
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2.5 mb-2">
-                  <HelpCircle className="w-4 h-4 text-cyan-600 shrink-0" />
+                  <HelpCircle className="w-4 h-4 text-rose-600 shrink-0" />
                   <span>{faq.q}</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 pl-6.5 leading-relaxed">

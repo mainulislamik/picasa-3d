@@ -25,8 +25,8 @@ export default function TrustStats() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Award className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Award className="w-3.5 h-3.5 text-rose-600" />
             <span>GLOBAL PRODUCTION INFRASTRUCTURE</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
@@ -42,9 +42,9 @@ export default function TrustStats() {
           {TRUST_COUNTERS.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-6 sm:p-8 text-center space-y-2 border border-slate-200 shadow-sm hover:border-cyan-400 transition-all duration-300 group hover:shadow-xl hover:-translate-y-2"
+              className="bg-white rounded-3xl p-6 sm:p-8 text-center space-y-2 border border-slate-200 shadow-sm hover:border-rose-400 transition-all duration-300 group hover:shadow-xl hover:-translate-y-2"
             >
-              <span className="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 font-mono tracking-tight block">
+              <span className="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 font-mono tracking-tight block">
                 {stat.value}
               </span>
               <span className="text-sm font-bold text-slate-900 block">
@@ -67,7 +67,7 @@ export default function TrustStats() {
             {CLIENT_LOGOS.map((client, idx) => (
               <div 
                 key={idx}
-                className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-cyan-300 hover:shadow-md hover:-translate-y-1 flex items-center justify-center w-full max-w-[200px] h-20 transition-all overflow-hidden"
+                className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-rose-300 hover:shadow-md hover:-translate-y-1 flex items-center justify-center w-full max-w-[200px] h-20 transition-all overflow-hidden"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -96,8 +96,8 @@ export default function TrustStats() {
             </div>
           </div>
           <div className="lg:col-span-5 p-8 sm:p-10 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono">
-              <Users className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono">
+              <Users className="w-3.5 h-3.5 text-rose-600" />
               <span>120+ FULL-TIME CRAFTSMEN</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
@@ -125,10 +125,10 @@ export default function TrustStats() {
           {ENTERPRISE_BADGES.map((badge, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white border border-slate-200 space-y-2 hover:border-cyan-300 hover:shadow-md hover:-translate-y-1 transition-all"
+              className="p-6 rounded-2xl bg-white border border-slate-200 space-y-2 hover:border-rose-300 hover:shadow-md hover:-translate-y-1 transition-all"
             >
               <div className="flex items-center gap-2 mb-2">
-                {idx === 0 && <ShieldCheck className="w-5 h-5 text-cyan-600" />}
+                {idx === 0 && <ShieldCheck className="w-5 h-5 text-rose-600" />}
                 {idx === 1 && <FileCheck2 className="w-5 h-5 text-indigo-600" />}
                 {idx === 2 && <Server className="w-5 h-5 text-emerald-600" />}
                 {idx === 3 && <Clock className="w-5 h-5 text-amber-600" />}

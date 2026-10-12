@@ -71,20 +71,20 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-rose-600 selection:text-white">
       <Navbar onOpenUpload={() => setModalOpen(true)} />
 
       <main className="flex-1 pt-28 pb-20">
         {/* Hero Header */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>BEHIND THE CRAFTSMANSHIP</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 font-display mb-6">
             180+ In-House Artists, <br />
-            <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 bg-clip-text text-transparent">
               Dhaka HQ Operational Engine
             </span>
           </h1>
@@ -102,8 +102,8 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-700 uppercase tracking-widest font-bold">
-                <MapPin className="w-4 h-4 text-cyan-600" />
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
+                <MapPin className="w-4 h-4 text-rose-600" />
                 <span>Dhaka, Bangladesh Production Hub</span>
               </div>
 
@@ -123,11 +123,11 @@ export default function AboutPage() {
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200 text-xs">
-                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-cyan-300 hover:shadow-md transition-all">
-                  <span className="text-2xl font-black text-cyan-700 font-display block">180+</span>
+                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-rose-300 hover:shadow-md transition-all">
+                  <span className="text-2xl font-black text-rose-700 font-display block">180+</span>
                   <span className="text-slate-500 font-mono">Full-Time Retouchers</span>
                 </div>
-                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-cyan-300 hover:shadow-md transition-all">
+                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-rose-300 hover:shadow-md transition-all">
                   <span className="text-2xl font-black text-emerald-700 font-display block">24/7/365</span>
                   <span className="text-slate-500 font-mono">Uninterrupted Shifts</span>
                 </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
             {/* Dhaka Facility Features */}
             <div className="rounded-3xl p-8 bg-white border border-slate-200 shadow-xl space-y-6">
               <h3 className="text-xl font-bold font-display text-slate-900 flex items-center gap-2">
-                <Building className="w-5 h-5 text-cyan-600" />
+                <Building className="w-5 h-5 text-rose-600" />
                 <span>Production Facility Standards</span>
               </h3>
 
@@ -156,7 +156,7 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="p-4 rounded-2xl bg-cyan-50 border border-cyan-200 text-xs text-cyan-900">
+              <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-900">
                 <span className="font-bold block mb-1">Guaranteed SLA Delivery:</span>
                 Order turnaround begins the second files land on our server, with delivery guarantees backed by full revision credits.
               </div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
         {/* Security & Confidentiality Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           <div className="text-center mb-12">
-            <span className="text-xs font-mono text-cyan-700 uppercase tracking-widest font-bold">
+            <span className="text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
               SECURITY & DATA INTEGRITY
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900 mt-1">
@@ -181,9 +181,9 @@ export default function AboutPage() {
               return (
                 <div 
                   key={idx}
-                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-400 hover:-translate-y-1.5 transition-all duration-300"
+                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 hover:-translate-y-1.5 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-700">
+                  <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center mb-4 text-rose-700">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 mb-2">{p.title}</h3>
@@ -205,8 +205,8 @@ export default function AboutPage() {
           <div className="space-y-8 relative before:absolute before:inset-0 before:left-4 before:w-[2px] before:bg-slate-200">
             {TIMELINE_MILESTONES.map((item, idx) => (
               <div key={idx} className="relative pl-10 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
-                <div className="absolute left-2.5 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-600 border-4 border-white shadow-md"></div>
-                <span className="text-lg font-black font-mono text-cyan-700 shrink-0">{item.year}</span>
+                <div className="absolute left-2.5 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md"></div>
+                <span className="text-lg font-black font-mono text-rose-700 shrink-0">{item.year}</span>
                 <div>
                   <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
                   <p className="text-xs text-slate-600 mt-1">{item.desc}</p>
@@ -218,7 +218,7 @@ export default function AboutPage() {
 
         {/* CTA Banner */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center">
-          <div className="p-12 rounded-3xl bg-white border-2 border-cyan-500/30 shadow-xl hover:border-cyan-500 transition-all">
+          <div className="p-12 rounded-3xl bg-white border-2 border-rose-500/30 shadow-xl hover:border-rose-500 transition-all">
             <h2 className="text-3xl font-bold font-display text-slate-900 mb-4">
               Ready to Upgrade Your Post-Production Pipeline?
             </h2>
@@ -227,7 +227,7 @@ export default function AboutPage() {
             </p>
             <button
               onClick={() => setModalOpen(true)}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-sm shadow-md hover:scale-105 active:scale-95 transition-all"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 to-red-600 text-white font-bold text-sm shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               Start Free Trial (5 Images)
             </button>

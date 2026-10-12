@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {ENTERPRISE_BADGES.map((badge, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-8 h-8 rounded-lg bg-rose-950/80 border border-rose-500/30 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <div>
@@ -61,17 +61,17 @@ export default function Footer() {
 
             <div className="space-y-2 text-xs text-slate-300 pt-2">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                 <span>{STUDIO_CONTACT.address}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Phone className="w-4 h-4 text-rose-400 shrink-0" />
                 <a href={`tel:${STUDIO_CONTACT.phone}`} className="hover:text-white font-mono">
                   {STUDIO_CONTACT.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Mail className="w-4 h-4 text-rose-400 shrink-0" />
                 <a href={`mailto:${STUDIO_CONTACT.email}`} className="hover:text-white">
                   {STUDIO_CONTACT.email}
                 </a>
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link 
                     href={`/services#${service.id}`}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center justify-between"
+                    className="text-slate-400 hover:text-rose-400 transition-colors flex items-center justify-between"
                   >
                     <span>{service.title}</span>
                   </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link 
                     href={`/services#${service.id}`}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center justify-between"
+                    className="text-slate-400 hover:text-rose-400 transition-colors flex items-center justify-between"
                   >
                     <span>{service.title}</span>
                   </Link>
@@ -128,14 +128,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/free-test" className="text-cyan-300 hover:text-white font-bold flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                <Link href="/free-test" className="text-rose-300 hover:text-white font-bold flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-rose-400" />
                   <span>Free Test (3 Images)</span>
                 </Link>
               </li>
               <li>
                 <Link href="/track-order" className="text-slate-400 hover:text-white flex items-center gap-1.5">
-                  <Search className="w-3.5 h-3.5 text-cyan-400" />
+                  <Search className="w-3.5 h-3.5 text-rose-400" />
                   <span>Track Production Batch</span>
                 </Link>
               </li>

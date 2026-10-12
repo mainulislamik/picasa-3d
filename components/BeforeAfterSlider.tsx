@@ -86,14 +86,14 @@ export default function BeforeAfterSlider() {
   return (
     <section id="comparison" className="py-24 bg-white relative overflow-hidden">
       {/* Ambient Radial Mesh Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-cyan-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-rose-500/10 blur-[150px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>SUB-PIXEL QUALITY BENCHMARK</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
@@ -115,8 +115,8 @@ export default function BeforeAfterSlider() {
               }}
               className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border ${
                 activeCategoryIndex === idx
-                  ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-cyan-500 shadow-md scale-105"
-                  : "bg-slate-50 text-slate-700 hover:text-slate-900 border-slate-200 hover:border-cyan-300 hover:-translate-y-0.5 hover:shadow-sm"
+                  ? "bg-gradient-to-r from-rose-600 to-red-600 text-white border-rose-500 shadow-md scale-105"
+                  : "bg-slate-50 text-slate-700 hover:text-slate-900 border-slate-200 hover:border-rose-300 hover:-translate-y-0.5 hover:shadow-sm"
               }`}
             >
               {idx === 0 && <Scissors className="w-3.5 h-3.5" />}
@@ -138,7 +138,7 @@ export default function BeforeAfterSlider() {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100 text-xs font-mono">
             <div>
               <span className="text-slate-500">ACTIVE BENCHMARK: </span>
-              <span className="text-cyan-700 font-bold">{currentCategory.title}</span>
+              <span className="text-rose-700 font-bold">{currentCategory.title}</span>
               <span className="text-slate-400 hidden sm:inline"> — {currentCategory.subtitle}</span>
             </div>
 
@@ -226,7 +226,7 @@ export default function BeforeAfterSlider() {
               </span>
             </div>
             <div className="absolute top-4 right-4 z-20 pointer-events-none">
-              <span className="px-3 py-1 rounded-full bg-white/95 border border-cyan-300 text-[11px] font-mono font-bold text-cyan-800 backdrop-blur-md shadow-sm">
+              <span className="px-3 py-1 rounded-full bg-white/95 border border-rose-300 text-[11px] font-mono font-bold text-rose-800 backdrop-blur-md shadow-sm">
                 PICASA MASTER
               </span>
             </div>
@@ -237,11 +237,11 @@ export default function BeforeAfterSlider() {
               style={{ left: `${sliderPosition}%` }}
             >
               {/* Glowing vertical line */}
-              <div className="w-[2px] h-full bg-cyan-600 shadow-md"></div>
+              <div className="w-[2px] h-full bg-rose-600 shadow-md"></div>
 
               {/* Center Draggable Circular Handle */}
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-cyan-600 shadow-md flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
-                <SlidersHorizontal className="w-4 h-4 text-cyan-600" />
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white border-2 border-rose-600 shadow-md flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing hover:scale-110 transition-transform">
+                <SlidersHorizontal className="w-4 h-4 text-rose-600" />
               </div>
             </div>
 
@@ -265,7 +265,7 @@ export default function BeforeAfterSlider() {
               {currentCategory.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-[11px] font-mono text-cyan-800 font-semibold hover:bg-cyan-50 hover:border-cyan-200 transition-colors"
+                  className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 text-[11px] font-mono text-rose-800 font-semibold hover:bg-rose-50 hover:border-rose-200 transition-colors"
                 >
                   ✓ {tag}
                 </span>

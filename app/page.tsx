@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Hero3D from "@/components/Hero3D";
+import LiveProductionFeed from "@/components/LiveProductionFeed";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import StudioInspectorLab from "@/components/StudioInspectorLab";
+import EnterpriseStandardsChecker from "@/components/EnterpriseStandardsChecker";
 import AiVsHumanShowcase from "@/components/AiVsHumanShowcase";
 import Services3D from "@/components/Services3D";
 import PricingCalculator from "@/components/PricingCalculator";
@@ -56,27 +58,36 @@ export default function Home() {
       {/* 2. Flagship Interactive 3D Hero Section (With Cinematic Full-Bleed Running Video) */}
       <Hero3D onOpenUpload={() => handleOpenUpload()} />
 
+      {/* 2.5 Live Real-Time Studio Dispatch & QC Activity Feed */}
+      <LiveProductionFeed 
+        onSelectService={handleSelectServiceFromCard}
+        onOpenUpload={() => handleOpenUpload()}
+      />
+
       {/* 3. Micro-Precision Before & After Dual-Layer Inspection (Authentic Client Photo Benchmarks) */}
       <BeforeAfterSlider />
 
       {/* 4. Sub-Pixel Precision Studio Inspector Lab (RGB Splitter, Bezier Paths & 2.4x Loupe) */}
       <StudioInspectorLab />
 
-      {/* 4. AI vs Human Specialist Breakdown (Why Global Brands Choose Picasa Pen Tools) */}
+      {/* 4.5 Enterprise Marketplace Standards & Automated Acceptance Diagnostic */}
+      <EnterpriseStandardsChecker />
+
+      {/* 5. AI vs Human Specialist Breakdown (Why Global Brands Choose Picasa Pen Tools) */}
       <AiVsHumanShowcase />
 
       {/* 5. 12 Core Services 3D Tilt Cards Grid */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Layers className="w-4 h-4 text-cyan-600" />
-            <span className="text-xs font-mono font-bold tracking-wider text-cyan-800 uppercase">
+            <Layers className="w-4 h-4 text-rose-600" />
+            <span className="text-xs font-mono font-bold tracking-wider text-rose-800 uppercase">
               Core Post-Production Capabilities
             </span>
           </div>
           <Link
             href="/services"
-            className="text-xs font-mono font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1 group hover:-translate-y-0.5 transition-all"
+            className="text-xs font-mono font-bold text-rose-700 hover:text-rose-800 flex items-center gap-1 group hover:-translate-y-0.5 transition-all"
           >
             <span>Explore All 12 Technical Disciplines</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -97,14 +108,14 @@ export default function Home() {
       <section className="relative" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-cyan-600" />
-            <span className="text-xs font-mono font-bold tracking-wider text-cyan-800 uppercase">
+            <Sliders className="w-4 h-4 text-rose-600" />
+            <span className="text-xs font-mono font-bold tracking-wider text-rose-800 uppercase">
               Instant Estimation Engine
             </span>
           </div>
           <Link
             href="/pricing"
-            className="text-xs font-mono font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1 group hover:-translate-y-0.5 transition-all"
+            className="text-xs font-mono font-bold text-rose-700 hover:text-rose-800 flex items-center gap-1 group hover:-translate-y-0.5 transition-all"
           >
             <span>Volume Tiers & Billing FAQ</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

@@ -85,20 +85,20 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-rose-600 selection:text-white">
       <Navbar />
 
       <main className="flex-1 pt-28 pb-20">
         {/* Header */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>GLOBAL STUDIO DESK & FREE TEST INGESTION</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 font-display mb-4">
             Connect With Dhaka HQ, <br />
-            <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 bg-clip-text text-transparent">
               Start Your Free Pilot
             </span>
           </h1>
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
                 <div className="space-y-4 text-xs sm:text-sm text-slate-700">
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                    <MapPin className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">Studio Facility Address</span>
                       <span>Level-5, B-3, Block-E, Zakir Hossain Road, Mohammadpur, Dhaka, Bangladesh</span>
@@ -128,20 +128,20 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Mail className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                    <Mail className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">General & Enterprise Inquiries</span>
-                      <a href="mailto:contact@picasalimited.com" className="hover:text-cyan-700 transition-colors">
+                      <a href="mailto:contact@picasalimited.com" className="hover:text-rose-700 transition-colors">
                         contact@picasalimited.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                    <Phone className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-slate-900 block">Studio Hotline & WhatsApp</span>
-                      <a href="tel:+8801717833075" className="hover:text-cyan-700 font-mono">
+                      <a href="tel:+8801717833075" className="hover:text-rose-700 font-mono">
                         +880 1717-833075 / +880 1886-063201
                       </a>
                     </div>
@@ -157,12 +157,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-6 border-t border-slate-200">
-                  <div className="p-4 rounded-2xl bg-cyan-50 border border-cyan-200 text-xs text-cyan-900 space-y-1">
-                    <div className="flex items-center gap-2 font-bold text-cyan-800">
+                  <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-900 space-y-1">
+                    <div className="flex items-center gap-2 font-bold text-rose-800">
                       <Headphones className="w-4 h-4" />
                       <span>15-Minute Response SLA</span>
                     </div>
-                    <p className="text-[11px] text-cyan-900/80">
+                    <p className="text-[11px] text-rose-900/80">
                       Our customer desk monitors incoming quotes 24/7. Your inquiry is reviewed by an art director, not an AI bot.
                     </p>
                   </div>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                       <p className="text-sm text-slate-600 max-w-md mx-auto">
                         Your project ticket has entered our Dhaka production queue:
                       </p>
-                      <div className="mt-3 inline-block px-4 py-2 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono font-bold text-lg">
+                      <div className="mt-3 inline-block px-4 py-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 font-mono font-bold text-lg">
                         #{submittedQuoteId}
                       </div>
                     </div>
@@ -223,7 +223,7 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <span className="text-xs font-mono text-cyan-700 font-bold uppercase tracking-wider block mb-1">
+                      <span className="text-xs font-mono text-rose-700 font-bold uppercase tracking-wider block mb-1">
                         STEP 1 OF 2
                       </span>
                       <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900">
@@ -247,13 +247,13 @@ export default function ContactPage() {
                             onClick={() => toggleService(srv.id)}
                             className={`p-2.5 rounded-xl text-left border text-xs font-semibold flex items-center justify-between transition-all ${
                               selectedServices.includes(srv.id)
-                                ? "bg-cyan-50 border-cyan-400 text-cyan-900 shadow-sm"
+                                ? "bg-rose-50 border-rose-400 text-rose-900 shadow-sm"
                                 : "bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300"
                             }`}
                           >
                             <span className="truncate">{srv.title}</span>
                             {selectedServices.includes(srv.id) && (
-                              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 shrink-0 ml-1" />
+                              <CheckCircle2 className="w-3.5 h-3.5 text-rose-600 shrink-0 ml-1" />
                             )}
                           </button>
                         ))}
@@ -272,7 +272,7 @@ export default function ContactPage() {
                           placeholder="your.name@brand.com"
                           value={clientEmail}
                           onChange={(e) => setClientEmail(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-cyan-500 focus:bg-white focus:outline-none shadow-sm"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-rose-500 focus:bg-white focus:outline-none shadow-sm"
                         />
                       </div>
 
@@ -285,7 +285,7 @@ export default function ContactPage() {
                           placeholder="e.g. Acme Studio, Nordstrom"
                           value={clientCompany}
                           onChange={(e) => setClientCompany(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-cyan-500 focus:bg-white focus:outline-none shadow-sm"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-rose-500 focus:bg-white focus:outline-none shadow-sm"
                         />
                       </div>
                     </div>
@@ -301,7 +301,7 @@ export default function ContactPage() {
                         placeholder="https://wetransfer.com/downloads/... or https://drive.google.com/..."
                         value={cloudUrl}
                         onChange={(e) => setCloudUrl(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono text-xs focus:border-cyan-500 focus:bg-white focus:outline-none shadow-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-mono text-xs focus:border-rose-500 focus:bg-white focus:outline-none shadow-sm"
                       />
                     </div>
 
@@ -318,7 +318,7 @@ export default function ContactPage() {
                           placeholder="If password protected"
                           value={cloudPassword}
                           onChange={(e) => setCloudPassword(e.target.value)}
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-cyan-500 focus:bg-white focus:outline-none shadow-sm"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-rose-500 focus:bg-white focus:outline-none shadow-sm"
                         />
                       </div>
                     </div>
@@ -340,12 +340,12 @@ export default function ContactPage() {
                             onClick={() => setTurnaround(t.id)}
                             className={`p-2.5 rounded-xl border text-center transition-all ${
                               turnaround === t.id
-                                ? "bg-cyan-50 border-cyan-500 text-cyan-900 shadow-sm"
+                                ? "bg-rose-50 border-rose-500 text-rose-900 shadow-sm"
                                 : "bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300"
                             }`}
                           >
                             <span className="text-xs font-bold block">{t.label}</span>
-                            <span className="text-[10px] text-cyan-700 font-mono">{t.tag}</span>
+                            <span className="text-[10px] text-rose-700 font-mono">{t.tag}</span>
                           </button>
                         ))}
                       </div>
@@ -361,7 +361,7 @@ export default function ContactPage() {
                         placeholder="e.g. Clipping path with 0.5px tolerance, transparent PNG, pure #FFFFFF canvas, keep shoe shadows..."
                         value={instructions}
                         onChange={(e) => setInstructions(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-cyan-500 focus:bg-white focus:outline-none shadow-sm"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-rose-500 focus:bg-white focus:outline-none shadow-sm"
                       ></textarea>
                     </div>
 
@@ -376,7 +376,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-700 hover:to-indigo-700 text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-500 hover:to-red-700 text-white font-extrabold text-sm shadow-lg flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <>

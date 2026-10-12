@@ -70,7 +70,7 @@ export default function NdaPage() {
                 <h2 className="text-2xl font-black text-slate-900 mt-1">
                   MUTUAL NON-DISCLOSURE AGREEMENT (e-NDA)
                 </h2>
-                <div className="text-xs font-mono text-cyan-800 font-bold mt-1">
+                <div className="text-xs font-mono text-rose-800 font-bold mt-1">
                   DOCUMENT NO: {agreementId} · EFFECTIVE: {effectiveDate}
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function NdaPage() {
             {!signed && (
               <form onSubmit={handleSign} className="mb-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 print:hidden">
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <PenTool className="w-4 h-4 text-cyan-600" />
+                  <PenTool className="w-4 h-4 text-rose-600" />
                   <span>Configure Your Enterprise Details to Sign</span>
                 </h3>
 
@@ -98,7 +98,7 @@ export default function NdaPage() {
                       required
                       value={clientCompany}
                       onChange={(e) => setClientCompany(e.target.value)}
-                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -109,7 +109,7 @@ export default function NdaPage() {
                       required
                       value={clientCountry}
                       onChange={(e) => setClientCountry(e.target.value)}
-                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -120,7 +120,7 @@ export default function NdaPage() {
                       required
                       value={signatoryName}
                       onChange={(e) => setSignatoryName(e.target.value)}
-                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -131,7 +131,7 @@ export default function NdaPage() {
                       required
                       value={signatoryTitle}
                       onChange={(e) => setSignatoryTitle(e.target.value)}
-                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function NdaPage() {
                 <div className="pt-2 flex justify-end">
                   <button
                     type="submit"
-                    className="px-6 py-2.5 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-all"
+                    className="px-6 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-all"
                   >
                     <span>Execute & Apply Digital Seal</span>
                     <ArrowRight className="w-4 h-4" />
@@ -249,7 +249,7 @@ export default function NdaPage() {
 
                 <Link
                   href="/free-test"
-                  className="px-6 py-2.5 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md"
+                  className="px-6 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md"
                 >
                   <span>Proceed to Free Test</span>
                   <ArrowRight className="w-3.5 h-3.5" />

@@ -67,14 +67,14 @@ export default function PricingCalculator({
   return (
     <section id="pricing" className="py-24 bg-white relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Calculator className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Calculator className="w-3.5 h-3.5 text-rose-600" />
             <span>TRANSPARENT ENTERPRISE RATE ENGINE</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
@@ -95,7 +95,7 @@ export default function PricingCalculator({
             <div>
               <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block mb-3 flex items-center justify-between">
                 <span>1. Select Creative Service</span>
-                <span className="text-cyan-700 lowercase">{SERVICES_DATA.length} specialized desks</span>
+                <span className="text-rose-700 lowercase">{SERVICES_DATA.length} specialized desks</span>
               </label>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -105,12 +105,12 @@ export default function PricingCalculator({
                     onClick={() => setSelectedServiceId(srv.id)}
                     className={`p-3 rounded-2xl text-left border transition-all duration-200 ${
                       selectedServiceId === srv.id
-                        ? "bg-cyan-50 border-cyan-500 text-slate-900 shadow-sm ring-2 ring-cyan-500/10 font-bold"
-                        : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-cyan-300 hover:shadow-sm hover:-translate-y-0.5"
+                        ? "bg-rose-50 border-rose-500 text-slate-900 shadow-sm ring-2 ring-rose-500/10 font-bold"
+                        : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-rose-300 hover:shadow-sm hover:-translate-y-0.5"
                     }`}
                   >
                     <span className="text-xs font-bold block truncate">{srv.title}</span>
-                    <span className="text-[10px] text-cyan-700 font-mono mt-1 block">from {srv.startingPrice}</span>
+                    <span className="text-[10px] text-rose-700 font-mono mt-1 block">from {srv.startingPrice}</span>
                   </button>
                 ))}
               </div>
@@ -151,7 +151,7 @@ export default function PricingCalculator({
                   3. Batch Volume (Images per Order)
                 </label>
                 <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-cyan-800 font-mono font-extrabold text-sm shadow-sm">
+                  <span className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-rose-800 font-mono font-extrabold text-sm shadow-sm">
                     {volume.toLocaleString()} Images
                   </span>
                   {estimate.discountPercent > 0 && (
@@ -170,7 +170,7 @@ export default function PricingCalculator({
                 step="10"
                 value={volume}
                 onChange={(e) => setVolume(parseInt(e.target.value))}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
+                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-rose-600"
               />
 
               {/* Bulk Tier Milestones */}
@@ -195,13 +195,13 @@ export default function PricingCalculator({
                     onClick={() => setSelectedSla(sla.id)}
                     className={`p-3.5 rounded-2xl border text-left flex items-start justify-between transition-all duration-200 ${
                       selectedSla === sla.id
-                        ? "bg-cyan-50 border-cyan-500 text-slate-900 shadow-sm"
-                        : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-cyan-300 hover:-translate-y-0.5"
+                        ? "bg-rose-50 border-rose-500 text-slate-900 shadow-sm"
+                        : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-rose-300 hover:-translate-y-0.5"
                     }`}
                   >
                     <div>
                       <span className="text-xs font-bold block text-slate-900 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-cyan-600" />
+                        <Clock className="w-3.5 h-3.5 text-rose-600" />
                         {sla.title}
                       </span>
                       <span className="text-[10px] text-slate-500 block mt-1">{sla.description}</span>
@@ -223,7 +223,7 @@ export default function PricingCalculator({
           </div>
 
           {/* Right Column: Live Dynamic Quote Summary Card (Col 5) */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl border-2 border-cyan-500/30 hover:border-cyan-500 hover:shadow-2xl transition-all duration-300 relative">
+          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl border-2 border-rose-500/30 hover:border-rose-500 hover:shadow-2xl transition-all duration-300 relative">
             
             {/* Top Badge & Currency Switcher */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -240,7 +240,7 @@ export default function PricingCalculator({
                     onClick={() => setCurrency(curr)}
                     className={`px-2 py-0.5 rounded-lg transition-all ${
                       currency === curr
-                        ? "bg-cyan-600 text-white font-bold shadow-sm"
+                        ? "bg-rose-600 text-white font-bold shadow-sm"
                         : "text-slate-600 hover:text-slate-900"
                     }`}
                   >
@@ -262,7 +262,7 @@ export default function PricingCalculator({
               </div>
               <div className="flex justify-between py-1.5 border-b border-slate-100">
                 <span className="text-slate-500">Batch Quantity:</span>
-                <span className="text-cyan-800 font-mono font-bold">{volume} images</span>
+                <span className="text-rose-800 font-mono font-bold">{volume} images</span>
               </div>
               <div className="flex justify-between py-1.5 border-b border-slate-100">
                 <span className="text-slate-500">Guaranteed SLA:</span>
@@ -306,7 +306,7 @@ export default function PricingCalculator({
                 <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                   {currencySymbol}{(estimate.total * currencyRate).toFixed(2)}
                 </span>
-                <span className="text-xs font-mono text-cyan-700 font-semibold">
+                <span className="text-xs font-mono text-rose-700 font-semibold">
                   ≈ {currencySymbol}{(estimate.finalPerImage * currencyRate).toFixed(2)} / img
                 </span>
               </div>
@@ -315,15 +315,15 @@ export default function PricingCalculator({
             {/* Guarantee Checks */}
             <div className="space-y-1.5 text-[11px] text-slate-600">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-rose-600 shrink-0" />
                 <span>Unlimited free revisions until 100% approved</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-rose-600 shrink-0" />
                 <span>No upfront credit card required for pilot batch</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-rose-600 shrink-0" />
                 <span>Strict bilateral NDA confidentiality guarantee</span>
               </div>
             </div>
@@ -338,7 +338,7 @@ export default function PricingCalculator({
                   sla: currentSla.title,
                   estimateTotal: `${currencySymbol}${(estimate.total * currencyRate).toFixed(2)}`
                 })}
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-98 transition-all"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-700 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-98 transition-all"
               >
                 <span>Lock in Quote & Upload 5 Free</span>
                 <ArrowRight className="w-4 h-4" />

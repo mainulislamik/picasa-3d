@@ -147,7 +147,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
       <div className="relative w-full max-w-3xl rounded-3xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 my-8 text-slate-900 overflow-hidden">
         
         {/* Glow ambient inside modal */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/10 blur-3xl pointer-events-none rounded-full"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-rose-500/10 blur-3xl pointer-events-none rounded-full"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-500/10 blur-3xl pointer-events-none rounded-full"></div>
 
         {/* Close Button */}
@@ -162,8 +162,8 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
         {submitted ? (
           /* Success Screen */
           <div className="py-12 text-center space-y-6 animate-in zoom-in-95 duration-200">
-            <div className="w-20 h-20 rounded-full bg-cyan-50 border-2 border-cyan-500 flex items-center justify-center mx-auto shadow-md">
-              <CheckCircle2 className="w-10 h-10 text-cyan-600" />
+            <div className="w-20 h-20 rounded-full bg-rose-50 border-2 border-rose-500 flex items-center justify-center mx-auto shadow-md">
+              <CheckCircle2 className="w-10 h-10 text-rose-600" />
             </div>
 
             <div className="space-y-2">
@@ -172,7 +172,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
               </h3>
               <p className="text-sm text-slate-600 max-w-md mx-auto">
                 Your high-resolution files have entered the Dhaka Studio queue under ticket:{" "}
-                <span className="text-cyan-700 font-mono font-bold tracking-wider">
+                <span className="text-rose-700 font-mono font-bold tracking-wider">
                   #{quoteResponse?.quoteId || "PIC-2026-84920"}
                 </span>
               </p>
@@ -193,12 +193,12 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500 font-medium">Notification Sent To:</span>
-                <span className="text-cyan-800 font-mono font-bold">{clientEmail || "your email"}</span>
+                <span className="text-rose-800 font-mono font-bold">{clientEmail || "your email"}</span>
               </div>
               <div className="flex justify-between pt-2 border-t border-slate-200">
                 <span className="text-slate-500 font-medium">Status:</span>
-                <span className="text-cyan-700 font-mono font-bold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+                <span className="text-rose-700 font-mono font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
                   QUEUED FOR RETOUCH
                 </span>
               </div>
@@ -210,7 +210,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 setQuoteResponse(null);
                 onClose();
               }}
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 font-bold text-sm text-white shadow-md hover:scale-105 active:scale-95 transition-all"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-rose-600 to-red-600 font-bold text-sm text-white shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               Close & Return to Studio
             </button>
@@ -220,8 +220,8 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
           <div>
             {/* Modal Header */}
             <div className="mb-6 space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-[10px] font-mono mb-1">
-                <Sparkles className="w-3 h-3 text-cyan-600" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-[10px] font-mono mb-1">
+                <Sparkles className="w-3 h-3 text-rose-600" />
                 <span>PILOT TEST • 100% FREE NO CREDIT CARD REQUIRED</span>
               </div>
               <h3 className="text-2xl font-black tracking-tight text-slate-900 font-display">
@@ -239,7 +239,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 onClick={() => setActiveTab("direct")}
                 className={`flex-1 py-2 rounded-lg font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === "direct"
-                    ? "bg-white text-cyan-700 shadow-sm border border-slate-200"
+                    ? "bg-white text-rose-700 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -252,7 +252,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 onClick={() => setActiveTab("cloud")}
                 className={`flex-1 py-2 rounded-lg font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === "cloud"
-                    ? "bg-white text-cyan-700 shadow-sm border border-slate-200"
+                    ? "bg-white text-rose-700 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -266,7 +266,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
               {/* TAB 1: Direct File Drop Zone */}
               {activeTab === "direct" && (
                 <div className="space-y-4">
-                  <label className="relative border-2 border-dashed border-cyan-400 hover:border-cyan-500 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer bg-slate-50 hover:bg-cyan-50/40 hover:scale-[1.01] transition-all group">
+                  <label className="relative border-2 border-dashed border-rose-400 hover:border-rose-500 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer bg-slate-50 hover:bg-rose-50/40 hover:scale-[1.01] transition-all group">
                     <input
                       type="file"
                       multiple
@@ -274,8 +274,8 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                       className="hidden"
                       accept=".jpg,.jpeg,.png,.tiff,.tif,.psd,.cr2,.cr3,.nef,.arw,.dng"
                     />
-                    <div className="w-12 h-12 rounded-full bg-white border border-cyan-200 flex items-center justify-center mb-3 group-hover:scale-110 shadow-sm transition-transform">
-                      <UploadCloud className="w-6 h-6 text-cyan-600" />
+                    <div className="w-12 h-12 rounded-full bg-white border border-rose-200 flex items-center justify-center mb-3 group-hover:scale-110 shadow-sm transition-transform">
+                      <UploadCloud className="w-6 h-6 text-rose-600" />
                     </div>
                     <span className="text-sm font-bold text-slate-900 mb-1">
                       Drop files here or click to browse
@@ -290,7 +290,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                     <div className="space-y-2">
                       <div className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-wider flex items-center justify-between">
                         <span>Queued Images ({files.length})</span>
-                        <span className="text-cyan-700 font-bold">Ready for Retouching</span>
+                        <span className="text-rose-700 font-bold">Ready for Retouching</span>
                       </div>
                       <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
                         {files.map((file, idx) => (
@@ -299,7 +299,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                             className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs"
                           >
                             <div className="flex items-center gap-3 truncate">
-                              <FileText className="w-4 h-4 text-cyan-600 shrink-0" />
+                              <FileText className="w-4 h-4 text-rose-600 shrink-0" />
                               <div className="truncate">
                                 <p className="font-mono font-bold text-slate-800 truncate">{file.name}</p>
                                 <p className="text-[10px] text-slate-500">{file.size}</p>
@@ -312,7 +312,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                                   <span>Loaded</span>
                                 </span>
                               ) : (
-                                <span className="text-[11px] text-cyan-700 font-mono font-bold">
+                                <span className="text-[11px] text-rose-700 font-mono font-bold">
                                   {file.progress}%
                                 </span>
                               )}
@@ -346,7 +346,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                       value={cloudUrl}
                       onChange={(e) => setCloudUrl(e.target.value)}
                       required={activeTab === "cloud"}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:bg-white focus:border-cyan-500 focus:outline-none font-mono"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:bg-white focus:border-rose-500 focus:outline-none font-mono"
                     />
                   </div>
 
@@ -362,7 +362,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                         placeholder="Encrypted password key"
                         value={cloudPassword}
                         onChange={(e) => setCloudPassword(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:bg-white focus:border-cyan-500 focus:outline-none font-mono"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:bg-white focus:border-rose-500 focus:outline-none font-mono"
                       />
                     </div>
                   </div>
@@ -382,13 +382,13 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                       onClick={() => toggleService(srv.id)}
                       className={`p-2.5 rounded-xl text-left border text-xs font-semibold flex items-center justify-between transition-all hover:-translate-y-0.5 ${
                         selectedServices.includes(srv.id)
-                          ? "bg-cyan-50 border-2 border-cyan-500 text-cyan-900 shadow-sm"
-                          : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-cyan-300 hover:shadow-sm"
+                          ? "bg-rose-50 border-2 border-rose-500 text-rose-900 shadow-sm"
+                          : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-rose-300 hover:shadow-sm"
                       }`}
                     >
                       <span className="truncate">{srv.title}</span>
                       {selectedServices.includes(srv.id) && (
-                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600 shrink-0 ml-1" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-rose-600 shrink-0 ml-1" />
                       )}
                     </button>
                   ))}
@@ -407,7 +407,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                     placeholder="alex@fashionbrand.com"
                     value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:bg-white focus:border-cyan-500 focus:outline-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:bg-white focus:border-rose-500 focus:outline-none"
                   />
                 </div>
 
@@ -420,7 +420,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                     placeholder="e.g. Zara, Studio Apex, Fossil"
                     value={clientCompany}
                     onChange={(e) => setClientCompany(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:bg-white focus:border-cyan-500 focus:outline-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:bg-white focus:border-rose-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -435,7 +435,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                   placeholder="e.g. Keep natural hair flyaways, clean sole scuffs, 0.5px clipping path tolerance..."
                   value={instructions}
                   onChange={(e) => setInstructions(e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-400 text-xs focus:bg-white focus:border-cyan-500 focus:outline-none"
+                  className="w-full px-4 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder:text-slate-400 text-xs focus:bg-white focus:border-rose-500 focus:outline-none"
                 ></textarea>
               </div>
 
@@ -457,7 +457,7 @@ export default function UploadModal({ isOpen, onClose, initialConfig }: UploadMo
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-500 hover:to-red-700 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md hover:scale-[1.02] active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   {isSubmitting ? (
                     <>

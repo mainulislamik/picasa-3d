@@ -13,6 +13,7 @@ import {
   Cpu, 
   UserCheck 
 } from "lucide-react";
+import { soundFx } from "@/lib/audio";
 
 export default function AiVsHumanShowcase() {
   const [activeTab, setActiveTab] = useState<"apparel" | "jewelry" | "beauty">("apparel");
@@ -49,8 +50,8 @@ export default function AiVsHumanShowcase() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
-            <Cpu className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
+            <Cpu className="w-3.5 h-3.5 text-rose-600" />
             <span>The 2026 Quality Paradox</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -63,30 +64,39 @@ export default function AiVsHumanShowcase() {
           {/* Interactive Category Selector */}
           <div className="mt-8 inline-flex flex-wrap sm:flex-nowrap justify-center gap-1.5 p-1.5 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-full">
             <button
-              onClick={() => setActiveTab("apparel")}
+              onClick={() => {
+                soundFx.playSwitch();
+                setActiveTab("apparel");
+              }}
               className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "apparel"
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-rose-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
               Apparel & Fashion
             </button>
             <button
-              onClick={() => setActiveTab("jewelry")}
+              onClick={() => {
+                soundFx.playSwitch();
+                setActiveTab("jewelry");
+              }}
               className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "jewelry"
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-rose-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
               Jewelry & Luxury
             </button>
             <button
-              onClick={() => setActiveTab("beauty")}
+              onClick={() => {
+                soundFx.playSwitch();
+                setActiveTab("beauty");
+              }}
               className={`px-5 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "beauty"
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-rose-600 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >

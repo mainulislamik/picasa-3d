@@ -38,7 +38,7 @@ export default function ServicesPage() {
       category: "Foundation & Isolation",
       leadText: "100% Hand-Drawn Vector Bezier Curves with Zero Edge Halo",
       icon: Scissors,
-      color: "from-cyan-500 to-blue-600",
+      color: "from-rose-600 to-red-600",
       stats: { accuracy: "0.5px", capacity: "15,000/day", formats: "PSD, EPS, TIFF" },
       body: "Our clipping paths are crafted by senior craftsmen zooming in at 300% to 500% magnification. We never use rough automated AI edge detection that destroys fine leather grain or organic silhouettes. Every curve is composed of smooth, minimal anchor points for effortless downstream prepress manipulation.",
       deliverables: [
@@ -131,20 +131,20 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-rose-600 selection:text-white">
       <Navbar onOpenUpload={() => handleOpenUpload()} />
 
       <main className="flex-1 pt-28 pb-20">
         {/* Page Hero Header */}
         <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>ENTERPRISE SERVICE CATALOG • 2026</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 font-display mb-6">
             Precision Post-Production <br />
-            <span className="bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 bg-clip-text text-transparent">
               Engineered for Global Brands
             </span>
           </h1>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => handleOpenUpload()}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-sm shadow-md hover:scale-105 active:scale-95 transition-all"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-500 hover:to-red-700 text-white font-bold text-sm shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               <span>Test 5 Images Free</span>
               <ArrowRight className="w-4 h-4 ml-2 inline" />
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                 <div
                   key={spec.id}
                   id={spec.id}
-                  className="rounded-3xl p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-400 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
+                  className="rounded-3xl p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                           </div>
                         </div>
                         <div>
-                          <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-700 font-bold block">
+                          <span className="text-[11px] font-mono uppercase tracking-wider text-rose-700 font-bold block">
                             {spec.category}
                           </span>
                           <h3 className="text-xl font-bold text-slate-900 font-display">
@@ -251,7 +251,7 @@ export default function ServicesPage() {
 
                     <button
                       onClick={() => handleOpenUpload({ selectedServices: [spec.id] })}
-                      className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-cyan-600 hover:text-white border border-slate-200 text-slate-800 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105"
+                      className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-rose-600 hover:text-white border border-slate-200 text-slate-800 text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105"
                     >
                       <span>Order This</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -265,10 +265,10 @@ export default function ServicesPage() {
 
         {/* Global SLA Guarantee Bar */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <div className="rounded-3xl p-8 bg-white border-2 border-cyan-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-cyan-500 transition-all">
+          <div className="rounded-3xl p-8 bg-white border-2 border-rose-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-rose-500 transition-all">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center shrink-0">
-                <Clock className="w-7 h-7 text-cyan-600" />
+              <div className="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">
+                <Clock className="w-7 h-7 text-rose-600" />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-900 font-display">
@@ -283,7 +283,7 @@ export default function ServicesPage() {
 
             <button
               onClick={() => handleOpenUpload()}
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-extrabold text-xs shrink-0 hover:from-cyan-500 hover:to-blue-500 shadow-md hover:scale-105 active:scale-95 transition-all"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-rose-600 to-red-600 text-white font-extrabold text-xs shrink-0 hover:from-rose-500 hover:to-red-600 shadow-md hover:scale-105 active:scale-95 transition-all"
             >
               Start Free Pilot (5 Images)
             </button>

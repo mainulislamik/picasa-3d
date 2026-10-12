@@ -67,15 +67,15 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
   return (
     <section id="commercial-video" className="py-24 bg-white relative overflow-hidden border-t border-slate-200">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-rose-500/10 blur-[140px] pointer-events-none rounded-full"></div>
       <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-indigo-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <Video className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <Video className="w-3.5 h-3.5 text-rose-600" />
             <span>COMMERCIAL MOTION & VIDEO DESK</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
@@ -91,7 +91,7 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
           
           {/* Left Column: Video Player Showcase (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-slate-200 bg-slate-900 shadow-2xl group hover:border-cyan-400 hover:shadow-cyan-500/10 transition-all duration-300">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-slate-200 bg-slate-900 shadow-2xl group hover:border-rose-400 hover:shadow-rose-500/10 transition-all duration-300">
               
               {/* Running Video Element */}
               <video
@@ -110,7 +110,7 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
               {/* Progress Bar */}
               <div className="absolute bottom-14 left-0 right-0 h-1 bg-white/20">
                 <div 
-                  className="h-full bg-cyan-500 transition-all duration-100" 
+                  className="h-full bg-rose-500 transition-all duration-100" 
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -174,8 +174,8 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
                 { title: "Object Removal & Screen Replacement", desc: "Frame-by-frame rotoscoping & motion tracking" },
                 { title: "Fast Cloud Proxy Delivery", desc: "Private high-speed FTP & direct cloud folder sync" },
               ].map((feat, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200 hover:border-cyan-300 hover:shadow-sm transition-all">
-                  <div className="w-5 h-5 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200 hover:border-rose-300 hover:shadow-sm transition-all">
+                  <div className="w-5 h-5 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -190,7 +190,7 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
             <div className="pt-2 flex flex-wrap gap-3">
               <button
                 onClick={() => onOpenUpload && onOpenUpload("video-editing")}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-xs shadow-md hover:shadow-cyan-500/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-500 hover:to-red-700 text-white font-bold text-xs shadow-md hover:shadow-rose-500/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
               >
                 <span>Upload Sample Video for Test</span>
                 <ArrowRight className="w-3.5 h-3.5" />

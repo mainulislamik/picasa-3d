@@ -88,8 +88,8 @@ export default function FreeTestPage() {
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-600" /> 100% Risk-Free Pilot Studio
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-rose-600" /> 100% Risk-Free Pilot Studio
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
               Free Test (Up to 3 Images)
@@ -109,7 +109,7 @@ export default function FreeTestPage() {
                 Thank you, <strong className="text-slate-900">{formData.name || "Valued Client"}</strong>. Your trial files have been routed to our Dhaka Production Studio. A senior QC specialist will review and return your finished files to <strong className="text-slate-900">{formData.email}</strong> within {formData.turnaround}.
               </p>
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1 font-mono text-left">
-                <div className="text-cyan-700 font-bold">Pilot Order ID: {ticketId}</div>
+                <div className="text-rose-700 font-bold">Pilot Order ID: {ticketId}</div>
                 <div className="text-slate-500">Service: {formData.service} ({files.length} images queued)</div>
                 <div className="text-emerald-600 font-bold">Estimated Delivery: &lt; {formData.turnaround}</div>
               </div>
@@ -125,7 +125,7 @@ export default function FreeTestPage() {
                 </button>
                 <Link
                   href="/"
-                  className="px-6 py-2.5 rounded-full text-xs font-bold bg-cyan-600 hover:bg-cyan-700 text-white transition-colors"
+                  className="px-6 py-2.5 rounded-full text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white transition-colors"
                 >
                   Return to Studio Home
                 </Link>
@@ -144,7 +144,7 @@ export default function FreeTestPage() {
                     onDragOver={handleDragOver}
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-slate-300 hover:border-cyan-500 rounded-2xl p-8 text-center cursor-pointer transition-colors bg-slate-50/50 hover:bg-cyan-50/30"
+                    className="border-2 border-dashed border-slate-300 hover:border-rose-500 rounded-2xl p-8 text-center cursor-pointer transition-colors bg-slate-50/50 hover:bg-rose-50/30"
                   >
                     <input
                       ref={fileInputRef}
@@ -154,7 +154,7 @@ export default function FreeTestPage() {
                       onChange={handleFileChange}
                       className="hidden"
                     />
-                    <UploadCloud className="w-12 h-12 text-cyan-600 mx-auto mb-3" />
+                    <UploadCloud className="w-12 h-12 text-rose-600 mx-auto mb-3" />
                     <h4 className="text-sm font-bold text-slate-800">
                       Click to Browse or Drag & Drop Images Here
                     </h4>
@@ -169,7 +169,7 @@ export default function FreeTestPage() {
                       {files.map((file, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs">
                           <div className="flex items-center gap-2 truncate">
-                            <ImageIcon className="w-4 h-4 text-cyan-600 shrink-0" />
+                            <ImageIcon className="w-4 h-4 text-rose-600 shrink-0" />
                             <div className="truncate">
                               <span className="font-semibold text-slate-800 block truncate">{file.name}</span>
                               <span className="text-[10px] text-slate-500">{file.size}</span>
@@ -200,7 +200,7 @@ export default function FreeTestPage() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium bg-white focus:outline-none focus:ring-2 focus:ring-rose-500"
                     >
                       {ALL_SERVICES.map((s) => (
                         <option key={s.id} value={s.title}>
@@ -217,7 +217,7 @@ export default function FreeTestPage() {
                     <select
                       value={formData.turnaround}
                       onChange={(e) => setFormData({ ...formData, turnaround: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium bg-white focus:outline-none focus:ring-2 focus:ring-rose-500"
                     >
                       <option value="4 Hours (Rush Pilot)">4 Hours (Rush Pilot Desk)</option>
                       <option value="12 Hours (Standard Pilot)">12 Hours (Standard Pilot Desk)</option>
@@ -238,7 +238,7 @@ export default function FreeTestPage() {
                       placeholder="e.g. John Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -252,7 +252,7 @@ export default function FreeTestPage() {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -265,7 +265,7 @@ export default function FreeTestPage() {
                       placeholder="e.g. Nordic Apparel Ltd"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
 
@@ -278,7 +278,7 @@ export default function FreeTestPage() {
                       placeholder="https://brand.com"
                       value={formData.website}
                       onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                   </div>
                 </div>
@@ -293,7 +293,7 @@ export default function FreeTestPage() {
                     placeholder="Describe your desired crop margin, clipping path requirements, background color (#FFFFFF or transparent), natural shadow intensity, etc."
                     value={formData.instructions}
                     onChange={(e) => setFormData({ ...formData, instructions: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
                   ></textarea>
                 </div>
 
@@ -306,7 +306,7 @@ export default function FreeTestPage() {
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
                   >
                     <span>Dispatch Free Test Batch</span>
                     <ArrowRight className="w-4 h-4" />

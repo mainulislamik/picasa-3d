@@ -23,6 +23,8 @@ import {
   Video,
   Zap
 } from "lucide-react";
+import ParticleLaserField from "@/components/ParticleLaserField";
+import { soundFx } from "@/lib/audio";
 
 interface Hero3DProps {
   onOpenUpload: () => void;
@@ -90,8 +92,11 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
       </div>
 
       {/* Ambient Radial Glow Gradients */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-rose-500/10 blur-[130px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[140px] pointer-events-none"></div>
+
+      {/* 2. Interactive Red Laser Particle Field */}
+      <ParticleLaserField particleCount={32} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -103,9 +108,9 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-cyan-200 text-cyan-800 text-xs font-semibold shadow-sm hover:shadow-md hover:border-cyan-300 transition-all cursor-default"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-rose-200 text-rose-800 text-xs font-semibold shadow-sm hover:shadow-md hover:border-rose-300 transition-all cursor-default"
             >
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
               <span>Next-Gen 3D Studio Architecture</span>
               <span className="text-slate-300">•</span>
               <span className="text-slate-600 font-mono">100% Hand-Crafted</span>
@@ -119,7 +124,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]"
             >
               Precision <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-red-600 to-rose-700">
                 Post-Production
               </span>{" "}
               <br />
@@ -143,8 +148,8 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-700 font-medium"
             >
-              <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm hover:shadow-md hover:border-cyan-300 hover:-translate-y-0.5 transition-all">
-                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+              <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm hover:shadow-md hover:border-rose-300 hover:-translate-y-0.5 transition-all">
+                <CheckCircle2 className="w-4 h-4 text-rose-600" />
                 <span className="font-semibold">$0.25 Starting Clipping Path</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl shadow-sm hover:shadow-md hover:border-emerald-300 hover:-translate-y-0.5 transition-all">
@@ -166,7 +171,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
             >
               <button
                 onClick={onOpenUpload}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-extrabold text-sm flex items-center justify-center gap-3 shadow-md hover:shadow-cyan-500/25 hover:scale-[1.03] active:scale-95 transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 via-red-600 to-rose-700 hover:from-rose-500 hover:to-red-700 text-white font-extrabold text-sm flex items-center justify-center gap-3 shadow-md hover:shadow-rose-500/25 hover:scale-[1.03] active:scale-95 transition-all duration-300"
               >
                 <UploadCloud className="w-5 h-5" />
                 <span>Start Free Trial (5 Images Free)</span>
@@ -175,9 +180,9 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
 
               <a
                 href="#comparison"
-                className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-cyan-400 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200"
+                className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-rose-400 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200"
               >
-                <Eye className="w-4 h-4 text-cyan-600" />
+                <Eye className="w-4 h-4 text-rose-600" />
                 <span>Explore Live Demo</span>
               </a>
             </motion.div>
@@ -192,33 +197,33 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                 onClick={() => setStageMode("layers")}
                 className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
                   stageMode === "layers" 
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200" 
+                    ? "bg-white text-rose-800 shadow-sm border border-slate-200" 
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                <Layers className="w-3.5 h-3.5 text-cyan-600" />
+                <Layers className="w-3.5 h-3.5 text-rose-600" />
                 <span>3D Depth Layers</span>
               </button>
               <button
                 onClick={() => setStageMode("composite")}
                 className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
                   stageMode === "composite"
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
+                    ? "bg-white text-rose-800 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                <Maximize2 className="w-3.5 h-3.5 text-cyan-600" />
+                <Maximize2 className="w-3.5 h-3.5 text-rose-600" />
                 <span>Merged Composite</span>
               </button>
               <button
                 onClick={() => setStageMode("video")}
                 className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
                   stageMode === "video"
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
+                    ? "bg-white text-rose-800 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
-                <Video className="w-3.5 h-3.5 text-cyan-600" />
+                <Video className="w-3.5 h-3.5 text-rose-600" />
                 <span>Running Motion Reel</span>
               </button>
             </div>
@@ -247,7 +252,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                       transform: "translateZ(30px)",
                       transformStyle: "preserve-3d",
                     }}
-                    className="absolute inset-0 rounded-3xl bg-slate-950 border-2 border-cyan-400 shadow-2xl overflow-hidden flex flex-col justify-between"
+                    className="absolute inset-0 rounded-3xl bg-slate-950 border-2 border-rose-400 shadow-2xl overflow-hidden flex flex-col justify-between"
                   >
                     <video
                       src="/videos/nba.mp4"
@@ -264,7 +269,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                         RUNNING MOTION REEL
                       </span>
-                      <span className="bg-cyan-500 text-black px-2 py-0.5 rounded font-bold text-[10px]">
+                      <span className="bg-rose-600 text-white px-2 py-0.5 rounded font-bold text-[10px]">
                         1080p 60fps
                       </span>
                     </div>
@@ -292,11 +297,11 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                   <div className="absolute inset-0 mesh-grid-dense opacity-70"></div>
                   
                   {/* Studio Overhead Light Flare */}
-                  <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-40 bg-cyan-400/15 blur-3xl rounded-full"></div>
+                  <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-40 bg-rose-500/15 blur-3xl rounded-full"></div>
 
-                  <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-cyan-800 border-b border-slate-200 pb-3 font-semibold">
+                  <div className="relative z-10 flex items-center justify-between text-[11px] font-mono text-rose-800 border-b border-slate-200 pb-3 font-semibold">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-600"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
                       LAYER 01: STUDIO LIGHTING & CANVASES
                     </span>
                     <span className="text-slate-500">Z: -60px</span>
@@ -324,7 +329,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                   <div className="w-72 h-20 bg-slate-900/15 blur-xl rounded-full translate-y-28 shadow-2xl"></div>
                   
                   {/* Floor Reflection Gradient */}
-                  <div className="absolute bottom-6 w-64 h-12 bg-gradient-to-t from-cyan-600/10 to-transparent blur-md"></div>
+                  <div className="absolute bottom-6 w-64 h-12 bg-gradient-to-t from-rose-600/10 to-transparent blur-md"></div>
 
                   {exploded && (
                     <div className="absolute bottom-4 left-4 px-2.5 py-1 rounded bg-white/95 border border-slate-200 text-[10px] font-mono text-slate-700 shadow-sm font-semibold">
@@ -344,14 +349,14 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                     opacity: stageMode === "video" ? 0 : (exploded ? 0.95 : 0),
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                  className="absolute inset-4 rounded-2xl border-2 border-cyan-500/60 bg-cyan-50/40 pointer-events-none flex items-center justify-center overflow-hidden"
+                  className="absolute inset-4 rounded-2xl border-2 border-rose-500/60 bg-rose-50/40 pointer-events-none flex items-center justify-center overflow-hidden"
                 >
                   {/* Glowing Vector Bezier Path Overlay Simulation */}
                   <svg className="w-full h-full p-4" viewBox="0 0 400 400" fill="none">
                     {/* SVG Vector Path */}
                     <path
                       d="M 120 280 C 80 250, 70 170, 110 130 C 140 100, 260 90, 310 130 C 350 160, 340 250, 300 280 C 260 310, 160 310, 120 280 Z"
-                      stroke="#0284c7"
+                      stroke="#e11d48"
                       strokeWidth="2.5"
                       strokeDasharray="6 4"
                       className="animate-pulse"
@@ -373,7 +378,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                           width="8"
                           height="8"
                           fill="#FFFFFF"
-                          stroke="#0284c7"
+                          stroke="#e11d48"
                           strokeWidth="2"
                         />
                         <line
@@ -381,15 +386,15 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                           y1={pt.cy}
                           x2={pt.cx + 10}
                           y2={pt.cy}
-                          stroke="#0ea5e9"
+                          stroke="#f43f5e"
                           strokeWidth="1"
                         />
                       </g>
                     ))}
                   </svg>
 
-                  <div className="absolute top-4 left-4 px-2.5 py-1 rounded bg-white/95 border border-cyan-300 text-[10px] font-mono text-cyan-800 shadow-sm flex items-center gap-1.5 font-semibold">
-                    <PenTool className="w-3 h-3 text-cyan-600" />
+                  <div className="absolute top-4 left-4 px-2.5 py-1 rounded bg-white/95 border border-rose-300 text-[10px] font-mono text-rose-800 shadow-sm flex items-center gap-1.5 font-semibold">
+                    <PenTool className="w-3 h-3 text-rose-600" />
                     <span>LAYER 03: HAND-DRAWN BEZIER PATH (Z: +30px)</span>
                   </div>
                 </motion.div>
@@ -431,9 +436,9 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                       style={{
                         transform: "translateZ(105px)",
                       }}
-                      className="absolute -top-4 -left-6 px-3 py-1.5 rounded-xl bg-white/95 border border-cyan-200 text-cyan-800 text-xs font-bold shadow-md hidden sm:flex items-center gap-2 pointer-events-none"
+                      className="absolute -top-4 -left-6 px-3 py-1.5 rounded-xl bg-white/95 border border-rose-200 text-rose-800 text-xs font-bold shadow-md hidden sm:flex items-center gap-2 pointer-events-none"
                     >
-                      <PenTool className="w-3.5 h-3.5 text-cyan-600" />
+                      <PenTool className="w-3.5 h-3.5 text-rose-600" />
                       <span>Hand-Drawn Clipping Path</span>
                     </motion.div>
 
@@ -466,7 +471,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
 
             {/* Hint for interaction */}
             <p className="mt-4 text-[11px] font-mono text-slate-500 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-ping"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-ping"></span>
               <span>Move mouse cursor across card to explore 3D depth and parallax separation</span>
             </p>
 

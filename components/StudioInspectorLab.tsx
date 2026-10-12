@@ -80,8 +80,8 @@ export default function StudioInspectorLab() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
-            <Crosshair className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-bold tracking-wide uppercase shadow-sm mb-3">
+            <Crosshair className="w-3.5 h-3.5 text-rose-600" />
             <span>Interactive Sub-Pixel QC Desk</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -102,7 +102,7 @@ export default function StudioInspectorLab() {
                 }}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                   activeCategory === cat.id
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
+                    ? "bg-white text-rose-800 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -118,7 +118,7 @@ export default function StudioInspectorLab() {
           {/* Top Control Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-800 text-xs font-mono">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
               <span className="font-bold text-slate-200">{currentItem.title}</span>
               <span className="text-slate-400 hidden sm:inline">— {currentItem.subtitle}</span>
             </div>
@@ -133,7 +133,7 @@ export default function StudioInspectorLab() {
                     onClick={() => setChannelMode(ch)}
                     className={`px-2 py-1 rounded text-[10px] font-bold uppercase transition-colors ${
                       channelMode === ch
-                        ? "bg-cyan-500 text-white"
+                        ? "bg-rose-500 text-white"
                         : "text-slate-400 hover:text-slate-200"
                     }`}
                   >
@@ -248,8 +248,8 @@ export default function StudioInspectorLab() {
                 className="absolute top-0 bottom-0 z-30 pointer-events-none"
                 style={{ left: `${sliderPosition}%` }}
               >
-                <div className="absolute top-0 bottom-0 w-0.5 bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)] -translate-x-1/2"></div>
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-cyan-500 border-2 border-white shadow-xl flex items-center justify-center text-white">
+                <div className="absolute top-0 bottom-0 w-0.5 bg-rose-500 shadow-[0_0_12px_rgba(225,29,72,0.8)] -translate-x-1/2"></div>
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-rose-500 border-2 border-white shadow-xl flex items-center justify-center text-white">
                   <SlidersHorizontal className="w-3.5 h-3.5 rotate-90" />
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function StudioInspectorLab() {
             <div className="absolute bottom-4 left-4 z-30 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-mono text-slate-300 border border-white/10">
               ORIGINAL RAW (LEFT)
             </div>
-            <div className="absolute bottom-4 right-4 z-30 px-3 py-1 rounded-full bg-cyan-900/80 backdrop-blur-md text-[10px] font-mono text-cyan-200 border border-cyan-400/30">
+            <div className="absolute bottom-4 right-4 z-30 px-3 py-1 rounded-full bg-rose-950/85 backdrop-blur-md text-[10px] font-mono text-rose-200 border border-rose-500/30">
               PICASA RETOUCH (RIGHT)
             </div>
           </div>
@@ -271,7 +271,7 @@ export default function StudioInspectorLab() {
             </p>
             <div className="flex flex-wrap gap-2">
               {currentItem.tags.map((tag, idx) => (
-                <span key={idx} className="px-2.5 py-1 rounded-full bg-slate-800 text-[10px] font-mono text-cyan-300 border border-slate-700">
+                <span key={idx} className="px-2.5 py-1 rounded-full bg-slate-800 text-[10px] font-mono text-rose-300 border border-slate-700">
                   {tag}
                 </span>
               ))}

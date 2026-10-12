@@ -76,7 +76,7 @@ export default function RootLayout({
       lang="en" 
       className={`light scroll-smooth ${poppins.variable} ${openSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-cyan-500 selection:text-white">
+      <body className="font-sans bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-rose-600 selection:text-white">
         {children}
       </body>
     </html>

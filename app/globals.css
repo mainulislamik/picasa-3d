@@ -9,13 +9,13 @@
   --card-foreground: #0f172a;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --primary: #0284c7;
+  --primary: #e11d48;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #0f172a;
   --muted: #f8fafc;
   --muted-foreground: #475569;
-  --accent: #0ea5e9;
+  --accent: #e11d48;
   --accent-foreground: #ffffff;
 }
 
@@ -74,12 +74,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Light Theme Studio Mesh Glows */
+.mesh-glow-rose {
+  background: radial-gradient(circle at 50% 50%, rgba(225, 29, 72, 0.12) 0%, transparent 65%);
+}
+
 .mesh-glow-cyan {
-  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(225, 29, 72, 0.12) 0%, transparent 65%);
 }
 
 .mesh-glow-violet {
-  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.10) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(225, 29, 72, 0.10) 0%, transparent 65%);
 }
 
 .mesh-grid {
@@ -92,8 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 .mesh-grid-dense {
   background-size: 20px 20px;
   background-image: 
-    linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(225, 29, 72, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(225, 29, 72, 0.08) 1px, transparent 1px);
 }
 
 /* Light Glassmorphism Classes */

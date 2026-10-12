@@ -23,14 +23,14 @@ export default function FAQSection() {
   return (
     <section id="faq" className="py-24 bg-white relative overflow-hidden">
       {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono mb-4 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 text-cyan-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-rose-600" />
             <span>TRANSPARENCY & POLICIES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
@@ -51,7 +51,7 @@ export default function FAQSection() {
                 key={idx}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-white border-2 border-cyan-500 shadow-md ring-2 ring-cyan-500/10"
+                    ? "bg-white border-2 border-rose-500 shadow-md ring-2 ring-rose-500/10"
                     : "bg-slate-50 border-slate-200 hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5"
                 }`}
               >
@@ -60,7 +60,7 @@ export default function FAQSection() {
                   className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 >
                   <span className="text-base font-bold text-slate-900 flex items-center gap-3">
-                    <span className="text-xs font-mono text-cyan-700 font-bold opacity-80">
+                    <span className="text-xs font-mono text-rose-700 font-bold opacity-80">
                       0{idx + 1}.
                     </span>
                     <span>{item.question}</span>
@@ -68,7 +68,7 @@ export default function FAQSection() {
 
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-cyan-600 text-white" : "bg-slate-200/80 text-slate-600"
+                      isOpen ? "rotate-180 bg-rose-600 text-white" : "bg-slate-200/80 text-slate-600"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -91,7 +91,7 @@ export default function FAQSection() {
             Have a custom requirement or need an API integration?{" "}
             <a
               href="mailto:production@picasalimited.com"
-              className="text-cyan-700 underline hover:text-cyan-800 font-bold"
+              className="text-rose-700 underline hover:text-rose-800 font-bold"
             >
               Contact our Senior Studio Lead directly
             </a>
