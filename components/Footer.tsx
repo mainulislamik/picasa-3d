@@ -33,19 +33,16 @@ export default function Footer({ onOpenUpload }: FooterProps) {
           {/* Column 1: Brand & Studio Description (Col 4) */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-600 to-indigo-600 p-[1px] shadow-sm group-hover:scale-105 transition-transform">
-                <div className="w-full h-full bg-white rounded-[11px] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-cyan-600" />
-                </div>
+              <div className="relative py-1 flex items-center">
+                <img 
+                  src="/logo.svg" 
+                  alt="Picasa Limited" 
+                  className="h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div>
-                <span className="font-extrabold text-lg tracking-tight text-slate-900 block group-hover:text-cyan-700 transition-colors">
-                  PICASA LIMITED
-                </span>
-                <span className="text-[10px] font-mono text-cyan-700 block -mt-1 font-semibold">
-                  2026 3D EDITION • POST-PRODUCTION
-                </span>
-              </div>
+              <span className="text-[10px] font-mono text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 uppercase font-bold">
+                3D Studio
+              </span>
             </Link>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">

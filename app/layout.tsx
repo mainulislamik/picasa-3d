@@ -1,16 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Poppins, Open_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-open-sans",
   display: "swap",
 });
 
@@ -21,8 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Picasa Limited | 2026 3D Edition • Precision Post-Production at Enterprise Scale",
-  description: "Enterprise B2B image editing, 100% hand-drawn vector clipping paths, ghost mannequin, and high-end jewelry retouching by 180+ craftsmen. Guaranteed overnight SLAs.",
+  title: "Picasa Limited | Specialist Photo & Video Post-Production Studio",
+  description: "Enterprise B2B image editing, 100% hand-drawn vector clipping paths ($0.25), ghost mannequin ($0.65), and high-end jewelry retouching by 180+ craftsmen. Guaranteed overnight SLAs.",
   keywords: [
     "Clipping Path Service",
     "Ghost Mannequin Post Production",
@@ -33,19 +35,32 @@ export const metadata: Metadata = {
     "Dhaka Post Production HQ"
   ],
   authors: [{ name: "Picasa Limited" }],
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
-    title: "Picasa Limited | 2026 3D Edition • Precision Post-Production",
+    title: "Picasa Limited | Specialist Photo & Video Post-Production Studio",
     description: "Enterprise post-production studio powered by 180+ retouchers. Sub-pixel clipping paths and guaranteed overnight SLAs.",
     url: "https://www.picasalimited.com",
     siteName: "Picasa Limited",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Picasa Limited",
+      },
+    ],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070A11",
-  colorScheme: "dark",
+  themeColor: "#FFFFFF",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -59,9 +74,9 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`dark scroll-smooth ${plusJakartaSans.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
+      className={`light scroll-smooth ${poppins.variable} ${openSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans bg-[#070A11] text-[#F8FAFC] antialiased selection:bg-cyan-500 selection:text-black">
+      <body className="font-sans bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-cyan-500 selection:text-white">
         {children}
       </body>
     </html>

@@ -8,6 +8,7 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Services3D from "@/components/Services3D";
 import PricingCalculator from "@/components/PricingCalculator";
 import TrustStats from "@/components/TrustStats";
+import CommercialVideoReel from "@/components/CommercialVideoReel";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import UploadModal from "@/components/UploadModal";
@@ -96,7 +97,12 @@ export default function Home() {
         />
       </section>
 
-      {/* 5. Dynamic Real-Time Pricing Estimator */}
+      {/* 5. Live Running Commercial Video Reel */}
+      <CommercialVideoReel 
+        onOpenUpload={(serviceId) => handleOpenUpload({ serviceId: serviceId || "video-editing" })}
+      />
+
+      {/* 6. Dynamic Real-Time Pricing Estimator */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex items-center justify-between">
           <div className="flex items-center gap-2">

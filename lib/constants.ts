@@ -187,11 +187,11 @@ export const TRUST_COUNTERS = [
 ];
 
 export const CLIENT_LOGOS = [
-  { name: "MANGO", logo: "/wp-content/themes/picasalimited/assets/images/mango.png" },
-  { name: "TRUE RELIGION", logo: "/wp-content/themes/picasalimited/assets/images/truereligion.png" },
-  { name: "FORBES", logo: "/wp-content/themes/picasalimited/assets/images/forbes-logo-grey.png" },
-  { name: "FOSSIL GROUP", logo: "/wp-content/themes/picasalimited/assets/images/fossil-group.png" },
-  { name: "INC", logo: "/wp-content/themes/picasalimited/assets/images/inc-logo-grey.png" },
+  { name: "MANGO", logo: "/images/clients/mango.png" },
+  { name: "TRUE RELIGION", logo: "/images/clients/truereligion.png" },
+  { name: "FORBES", logo: "/images/clients/forbes-logo-grey.png" },
+  { name: "FOSSIL GROUP", logo: "/images/clients/fossil-group.png" },
+  { name: "INC", logo: "/images/clients/inc-logo-grey.png" },
 ];
 
 export const ENTERPRISE_BADGES = [

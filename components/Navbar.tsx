@@ -64,18 +64,21 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
             href="/" 
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-cyan-600 via-sky-600 to-indigo-600 p-[1.5px] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
-              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
-                <Sparkles className="w-5 h-5 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />
-              </div>
+            {/* Authentic Picasa Vector Logo */}
+            <div className="relative py-1 flex items-center">
+              <img 
+                src="/logo.svg" 
+                alt="Picasa Limited" 
+                className="h-7 sm:h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
 
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 group-hover:text-cyan-700 transition-colors">
-                PICASA <span className="text-cyan-600">LIMITED</span>
+            <div className="hidden sm:flex flex-col pl-2 border-l border-slate-200">
+              <span className="text-[10px] font-mono tracking-wider text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 uppercase font-bold">
+                3D Studio
               </span>
-              <span className="text-[10px] font-mono tracking-wider text-slate-500 uppercase -mt-1 font-semibold">
-                3D Studio Edition • Dhaka HQ
+              <span className="text-[9px] font-mono tracking-wider text-slate-500 uppercase font-semibold mt-0.5">
+                Dhaka HQ
               </span>
             </div>
           </Link>

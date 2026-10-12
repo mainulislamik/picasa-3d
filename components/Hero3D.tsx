@@ -20,6 +20,7 @@ import {
   Sliders, 
   PenTool, 
   Maximize2,
+  Video,
   Zap
 } from "lucide-react";
 
@@ -30,8 +31,10 @@ interface Hero3DProps {
 export default function Hero3D({ onOpenUpload }: Hero3DProps) {
   const [isMounted, setIsMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [exploded, setExploded] = useState(true);
+  const [stageMode, setStageMode] = useState<"layers" | "composite" | "video">("layers");
   const [activeLayer, setActiveLayer] = useState<number | null>(null);
+
+  const exploded = stageMode === "layers";
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -170,26 +173,37 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
             {/* View Mode Switcher Toggle */}
             <div className="mb-4 inline-flex items-center gap-1.5 p-1 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono shadow-sm z-20">
               <button
-                onClick={() => setExploded(true)}
+                onClick={() => setStageMode("layers")}
                 className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
-                  exploded
+                  stageMode === "layers"
                     ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 <Layers className="w-3.5 h-3.5 text-cyan-600" />
-                <span>3D Exploded Depth View</span>
+                <span>3D Depth Layers</span>
               </button>
               <button
-                onClick={() => setExploded(false)}
+                onClick={() => setStageMode("composite")}
                 className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
-                  !exploded
+                  stageMode === "composite"
                     ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 <Maximize2 className="w-3.5 h-3.5 text-cyan-600" />
                 <span>Merged Composite</span>
+              </button>
+              <button
+                onClick={() => setStageMode("video")}
+                className={`px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition-all ${
+                  stageMode === "video"
+                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                <Video className="w-3.5 h-3.5 text-cyan-600" />
+                <span>Running Motion Reel</span>
               </button>
             </div>
 
@@ -210,6 +224,42 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                 className="relative w-full h-full rounded-3xl transition-shadow duration-300"
               >
 
+                {/* MODE 3: FULL RUNNING VIDEO REEL IN 3D STAGE */}
+                {stageMode === "video" && (
+                  <motion.div
+                    style={{
+                      transform: "translateZ(30px)",
+                      transformStyle: "preserve-3d",
+                    }}
+                    className="absolute inset-0 rounded-3xl bg-slate-950 border-2 border-cyan-400 shadow-2xl overflow-hidden flex flex-col justify-between"
+                  >
+                    <video
+                      src="/videos/nba.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40 pointer-events-none" />
+
+                    <div className="relative z-10 p-4 flex items-center justify-between text-white text-xs font-mono">
+                      <span className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        RUNNING MOTION REEL
+                      </span>
+                      <span className="bg-cyan-500 text-black px-2 py-0.5 rounded font-bold text-[10px]">
+                        1080p 60fps
+                      </span>
+                    </div>
+
+                    <div className="relative z-10 p-4 text-white">
+                      <h4 className="font-bold text-sm">Picasa Commercial Video Reel</h4>
+                      <p className="text-[11px] text-slate-300 font-mono">Sports & Post-Production Motion Desk</p>
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* LAYER 1: Studio Background & Lighting Grid (Z: -60px) */}
                 <motion.div
                   style={{
@@ -217,13 +267,23 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                     transformStyle: "preserve-3d",
                   }}
                   animate={{
-                    opacity: exploded ? 0.95 : 1,
+                    opacity: stageMode === "video" ? 0 : (exploded ? 0.95 : 1),
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                   className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white via-slate-50 to-slate-100 border border-slate-200 shadow-xl overflow-hidden p-6 flex flex-col justify-between"
                 >
                   {/* Subtle Studio Blueprint Grid */}
                   <div className="absolute inset-0 mesh-grid-dense opacity-70"></div>
+
+                  {/* Ambient Background Running Video */}
+                  <video
+                    src="/videos/nba.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-multiply"
+                  />
                   
                   {/* Studio Overhead Light Flare */}
                   <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-40 bg-cyan-400/15 blur-3xl rounded-full"></div>
@@ -250,7 +310,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                     transformStyle: "preserve-3d",
                   }}
                   animate={{
-                    opacity: exploded ? 0.85 : 1,
+                    opacity: stageMode === "video" ? 0 : (exploded ? 0.85 : 1),
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                   className="absolute inset-6 rounded-2xl flex items-center justify-center pointer-events-none"
@@ -275,7 +335,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                     transformStyle: "preserve-3d",
                   }}
                   animate={{
-                    opacity: exploded ? 0.95 : 0,
+                    opacity: stageMode === "video" ? 0 : (exploded ? 0.95 : 0),
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                   className="absolute inset-4 rounded-2xl border-2 border-cyan-500/60 bg-cyan-50/40 pointer-events-none flex items-center justify-center overflow-hidden"
@@ -334,6 +394,9 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
                   style={{
                     transform: exploded ? "translateZ(80px)" : "translateZ(0px)",
                     transformStyle: "preserve-3d",
+                  }}
+                  animate={{
+                    opacity: stageMode === "video" ? 0 : 1,
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                   className="absolute inset-8 rounded-2xl flex items-center justify-center pointer-events-none drop-shadow-[0_20px_30px_rgba(15,23,42,0.18)]"
