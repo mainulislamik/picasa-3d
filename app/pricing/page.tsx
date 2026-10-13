@@ -4,18 +4,14 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PricingCalculator from "@/components/PricingCalculator";
+import EnterpriseBillingSection from "@/components/EnterpriseBillingSection";
 import UploadModal from "@/components/UploadModal";
 import { 
   Sparkles, 
-  CheckCircle2, 
   HelpCircle, 
   CreditCard, 
-  ShieldCheck, 
   Building2, 
-  FileText, 
-  Zap, 
-  ArrowRight,
-  TrendingDown
+  Zap
 } from "lucide-react";
 
 export default function PricingPage() {
@@ -162,8 +158,13 @@ export default function PricingPage() {
           </div>
         </section>
 
+        {/* Enterprise Invoicing & Bilateral Settlement */}
+        <div className="mt-20">
+          <EnterpriseBillingSection />
+        </div>
+
         {/* Billing & Payment FAQ Section */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900">
               Billing & Commercial FAQs

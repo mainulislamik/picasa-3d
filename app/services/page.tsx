@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Services3D from "@/components/Services3D";
+import EnterpriseStandardsChecker from "@/components/EnterpriseStandardsChecker";
 import UploadModal from "@/components/UploadModal";
 import { 
   Sparkles, 
@@ -15,12 +16,9 @@ import {
   PenTool, 
   CheckCircle2, 
   ArrowRight,
-  ShieldCheck,
-  Zap,
   Clock
 } from "lucide-react";
 import Link from "next/link";
-import { SERVICES_3D } from "@/lib/constants";
 
 export default function ServicesPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -263,8 +261,13 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Enterprise Marketplace Acceptance Diagnostic Tool */}
+        <div className="mt-20">
+          <EnterpriseStandardsChecker />
+        </div>
+
         {/* Global SLA Guarantee Bar */}
-        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-20">
           <div className="rounded-3xl p-8 bg-white border-2 border-rose-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-rose-500 transition-all">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">

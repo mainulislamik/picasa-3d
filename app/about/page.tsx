@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustStats from "@/components/TrustStats";
+import AiVsHumanShowcase from "@/components/AiVsHumanShowcase";
 import UploadModal from "@/components/UploadModal";
 import { 
   Sparkles, 
@@ -164,8 +165,13 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Why Manual Craftsmanship Wins: AI vs Human Specialist Breakdown */}
+        <div className="mt-20">
+          <AiVsHumanShowcase />
+        </div>
+
         {/* Security & Confidentiality Grid */}
-        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-20">
           <div className="text-center mb-12">
             <span className="text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
               SECURITY & DATA INTEGRITY
@@ -195,7 +201,7 @@ export default function AboutPage() {
         </section>
 
         {/* Studio Timeline */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900">
               Our Evolution
@@ -217,7 +223,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Banner */}
-        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24 text-center">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-20 text-center">
           <div className="p-12 rounded-3xl bg-white border-2 border-rose-500/30 shadow-xl hover:border-rose-500 transition-all">
             <h2 className="text-3xl font-bold font-display text-slate-900 mb-4">
               Ready to Upgrade Your Post-Production Pipeline?
