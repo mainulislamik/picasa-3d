@@ -98,11 +98,11 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
       {/* 2. Interactive Red Laser Particle Field */}
       <ParticleLaserField particleCount={32} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center w-full">
           
           {/* Left Column: 2026 Enterprise Studio Copy & CTAs */}
-          <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-6 xl:col-span-6 space-y-6 text-center lg:text-left">
             {/* Micro Status Badge */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]"
+              className="text-4xl sm:text-6xl xl:text-7xl font-black text-slate-900 tracking-tight leading-[1.06]"
             >
               Precision <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-red-600 to-rose-700">
@@ -136,7 +136,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed"
+              className="text-base sm:text-lg xl:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed"
             >
               Hand-crafted vector paths, editorial retouching, and apparel ghost mannequin by <span className="text-slate-900 font-bold">180+ master craftsmen</span> in Dhaka HQ. Sub-pixel precision with guaranteed overnight SLAs and zero AI artifacts.
             </motion.p>
@@ -189,7 +189,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
           </div>
 
           {/* Right Column: Flagship 3D Mouse Parallax Layer Breakdown */}
-          <div className="lg:col-span-6 flex flex-col items-center justify-center">
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-end justify-center">
             
             {/* View Mode Switcher Toggle */}
             <div className="mb-4 inline-flex items-center gap-1.5 p-1 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 text-xs font-mono shadow-sm z-20">
@@ -233,7 +233,7 @@ export default function Hero3D({ onOpenUpload }: Hero3DProps) {
               ref={containerRef}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="relative w-full max-w-[330px] sm:max-w-[460px] h-[400px] sm:h-[480px] perspective-1500 cursor-grab active:cursor-grabbing select-none"
+              className="relative w-full max-w-[360px] sm:max-w-[500px] xl:max-w-[580px] 2xl:max-w-[640px] h-[420px] sm:h-[500px] xl:h-[540px] perspective-1500 cursor-grab active:cursor-grabbing select-none"
             >
               {/* Interactive Spring-Rotated 3D Container */}
               <motion.div

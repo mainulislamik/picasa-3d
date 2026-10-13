@@ -105,7 +105,7 @@ export default function PortfolioPage() {
 
       <main className="flex-1 pt-28 pb-20">
         {/* Header */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mb-12 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>INTERACTIVE PRODUCTION SHOWROOM</span>
@@ -127,7 +127,7 @@ export default function PortfolioPage() {
         <BeforeAfterSlider />
 
         {/* Category Filter Tabs & Gallery Grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200">
             <div>
               <h2 className="text-2xl font-bold font-display text-slate-900">
@@ -232,7 +232,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* NDA Security Callout */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
           <div className="rounded-3xl p-8 bg-white border-2 border-rose-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-rose-500 transition-all">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">

@@ -83,7 +83,7 @@ export default function Home() {
 
       {/* 5. 12 Core Services 3D Tilt Cards Grid */}
       <section className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 flex items-center justify-between">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-12 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Layers className="w-4 h-4 text-rose-600" />
             <span className="text-xs font-mono font-bold tracking-wider text-rose-800 uppercase">
@@ -111,7 +111,7 @@ export default function Home() {
 
       {/* 7. Dynamic Real-Time Pricing Estimator */}
       <section className="relative" id="pricing">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 flex items-center justify-between">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-12 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sliders className="w-4 h-4 text-rose-600" />
             <span className="text-xs font-mono font-bold tracking-wider text-rose-800 uppercase">

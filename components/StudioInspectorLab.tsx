@@ -76,7 +76,7 @@ export default function StudioInspectorLab() {
 
   return (
     <section className="py-20 bg-white border-y border-slate-200 relative overflow-hidden" id="inspector-lab">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -113,7 +113,8 @@ export default function StudioInspectorLab() {
         </div>
 
         {/* Studio Inspector Desk Card */}
-        <div className="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-2xl border border-slate-800 text-white max-w-5xl mx-auto">
+        {/* Inspector Lab Console */}
+        <div className="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-2xl border border-slate-800 text-white w-full max-w-7xl xl:max-w-[1550px] mx-auto">
           
           {/* Top Control Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-800 text-xs font-mono">

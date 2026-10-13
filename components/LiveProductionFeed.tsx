@@ -131,7 +131,7 @@ export default function LiveProductionFeed({ onSelectService, onOpenUpload }: Li
 
   return (
     <section className="relative py-12 bg-white border-y border-slate-200/90 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Banner Grid */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">

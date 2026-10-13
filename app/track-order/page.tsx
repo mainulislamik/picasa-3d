@@ -80,7 +80,7 @@ export default function TrackOrderPage() {
       <Navbar />
 
       <main className="flex-grow py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-10">

@@ -70,7 +70,7 @@ export default function CommercialVideoReel({ onOpenUpload }: CommercialVideoRee
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-rose-500/10 blur-[140px] pointer-events-none rounded-full"></div>
       <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-indigo-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

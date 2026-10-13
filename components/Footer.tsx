@@ -24,7 +24,7 @@ export default function Footer() {
       
       {/* Enterprise Trust Ribbon */}
       <div className="border-b border-slate-800 py-10 bg-slate-950/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {ENTERPRISE_BADGES.map((badge, idx) => (
             <div key={idx} className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-lg bg-rose-950/80 border border-rose-500/30 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
@@ -40,7 +40,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Directory */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Brand & Studio Information */}

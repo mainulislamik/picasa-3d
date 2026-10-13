@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       <main className="flex-1 pt-28 pb-20">
         {/* Hero Header */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>BEHIND THE CRAFTSMANSHIP</span>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <TrustStats />
 
         {/* The Dhaka Operations Story */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
@@ -165,7 +165,7 @@ export default function AboutPage() {
         </section>
 
         {/* Security & Confidentiality Grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
           <div className="text-center mb-12">
             <span className="text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
               SECURITY & DATA INTEGRITY
@@ -217,7 +217,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Banner */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24 text-center">
           <div className="p-12 rounded-3xl bg-white border-2 border-rose-500/30 shadow-xl hover:border-rose-500 transition-all">
             <h2 className="text-3xl font-bold font-display text-slate-900 mb-4">
               Ready to Upgrade Your Post-Production Pipeline?

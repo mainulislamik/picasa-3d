@@ -51,7 +51,7 @@ export default function Navbar({ onOpenUpload }: NavbarProps) {
       <header className="sticky top-0 z-40 w-full flex flex-col shadow-xs">
         {/* Main Glassmorphic Navigation Bar */}
         <div className="bg-white/95 backdrop-blur-md border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+          <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 h-20 flex items-center justify-between gap-4">
             
             {/* Authentic Original Logo */}
             <Link 

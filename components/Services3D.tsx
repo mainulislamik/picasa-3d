@@ -169,7 +169,7 @@ export default function Services3D({ onSelectService, onOpenUpload }: Services3D
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[140px] pointer-events-none rounded-full"></div>
       <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-rose-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

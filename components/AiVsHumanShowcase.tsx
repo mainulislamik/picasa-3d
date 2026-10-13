@@ -46,7 +46,7 @@ export default function AiVsHumanShowcase() {
 
   return (
     <section className="py-20 bg-slate-50 border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -106,7 +106,7 @@ export default function AiVsHumanShowcase() {
         </div>
 
         {/* Head-to-Head Comparison Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl max-w-5xl mx-auto">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl w-full max-w-7xl xl:max-w-[1550px] mx-auto">
           <h3 className="text-xl font-bold text-slate-900 text-center mb-8">
             {current.title}
           </h3>

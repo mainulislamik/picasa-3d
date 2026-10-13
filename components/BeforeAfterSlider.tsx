@@ -88,7 +88,7 @@ export default function BeforeAfterSlider() {
       {/* Ambient Radial Mesh Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-rose-500/10 blur-[150px] pointer-events-none rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -132,7 +132,7 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* 3D Interactive Comparison Stage Card */}
-        <div className="bg-white rounded-3xl p-4 sm:p-8 max-w-5xl mx-auto shadow-xl border border-slate-200 relative overflow-hidden">
+        <div className="bg-white rounded-3xl p-4 sm:p-8 w-full max-w-7xl xl:max-w-[1550px] mx-auto shadow-xl border border-slate-200 relative overflow-hidden">
           
           {/* Top Stage Control Toolbar */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100 text-xs font-mono">

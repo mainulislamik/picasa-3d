@@ -20,7 +20,7 @@ import { soundFx } from "@/lib/audio";
 export default function EnterpriseBillingSection() {
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200" id="billing">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

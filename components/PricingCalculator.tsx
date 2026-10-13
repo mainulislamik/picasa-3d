@@ -69,7 +69,7 @@ export default function PricingCalculator({
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] pointer-events-none rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -86,7 +86,7 @@ export default function PricingCalculator({
         </div>
 
         {/* Two-Column Interactive Calculator Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full max-w-7xl xl:max-w-[1550px] mx-auto">
           
           {/* Left Column: Interactive Configuration Controls (Col 7) */}
           <div className="lg:col-span-7 bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 space-y-8 shadow-sm">

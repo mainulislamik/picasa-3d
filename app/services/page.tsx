@@ -136,7 +136,7 @@ export default function ServicesPage() {
 
       <main className="flex-1 pt-28 pb-20">
         {/* Page Hero Header */}
-        <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16 text-center">
+        <section className="relative px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>ENTERPRISE SERVICE CATALOG • 2026</span>
@@ -178,7 +178,7 @@ export default function ServicesPage() {
         />
 
         {/* Deep Dive Detailed Sections */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 space-y-16">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24 space-y-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-slate-900">
               Technical Specifications & In-Depth Capabilities
@@ -264,7 +264,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Global SLA Guarantee Bar */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-24">
           <div className="rounded-3xl p-8 bg-white border-2 border-rose-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-rose-500 transition-all">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">

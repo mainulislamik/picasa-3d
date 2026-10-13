@@ -80,7 +80,7 @@ export default function PricingPage() {
 
       <main className="flex-1 pt-28 pb-20">
         {/* Header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mb-12 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-xs font-mono mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
             <span>TRANSPARENT SCALE-DRIVEN PRICING</span>
@@ -102,7 +102,7 @@ export default function PricingPage() {
         <PricingCalculator onOpenUpload={(cfg) => handleOpenUpload(cfg)} />
 
         {/* Enterprise Volume Discount Table */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 mt-20">
           <div className="text-center mb-10">
             <span className="text-xs font-mono text-rose-700 uppercase tracking-widest font-bold">
               High-Volume Accounts

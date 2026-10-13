@@ -71,7 +71,7 @@ export default function HowItWorksPage() {
         {/* Subtle radial glow */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-rose-600/10 rounded-full blur-[140px] pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-600/20 border border-rose-500/40 text-rose-300 text-xs font-mono font-bold tracking-wider uppercase mb-6">
               <Zap className="w-3.5 h-3.5 text-rose-400" />
@@ -109,7 +109,7 @@ export default function HowItWorksPage() {
 
       {/* SLA Guarantees Grid */}
       <section className="py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="mb-10 text-center max-w-2xl mx-auto">
             <span className="text-xs font-mono font-bold text-rose-600 uppercase tracking-wider block mb-1">
               Guaranteed Delivery Windows
@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
 
       {/* Security & Confidentiality Assurances */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-rose-600/10 rounded-full blur-[100px] pointer-events-none" />
 
